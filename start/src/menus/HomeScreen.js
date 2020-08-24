@@ -1,13 +1,12 @@
 import React from "react";
-import { Text, StyleSheet, View, TouchableOpacity, ImageBackground} from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 
 const HomeScreen = ({navigation}) => {
-  return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-  <Grid style={{flex: 1}}>
+  return <Grid style={{flex: 1}}>
     <Row style= {styles.list1}>
       <ButtonsMenu title = "מבוא" navigate = {() => navigation.navigate('Intro')}/>
       <ButtonsMenu title = "לימוד ספרות" navigate = {() => navigation.navigate('LearningDigitsMenu')}/>
@@ -21,7 +20,26 @@ const HomeScreen = ({navigation}) => {
       <ButtonsMenu title = "חיבור ספרות שונות" navigate= {() => navigation.navigate('AddingNumbers')}/>
     </Row>
   </Grid>
-  </ImageBackground>
+  
+  
+  
+  
+  
+  
+  /*<View> 
+      <View style= {styles.list1}>
+      <ButtonsMenu title = "מבוא" navigate = {() => navigation.navigate('Intro')}/>
+      <ButtonsMenu title = "לימוד ספרות" navigate = {() => navigation.navigate('LearningDigits')}/>
+      <ButtonsMenu title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits')}/>
+      </View>
+      <View style= {styles.list2}>
+      <ButtonsMenu title = "חיבור תאומים" navigate = {() => navigation.navigate('AddingTwins')}/>
+      <ButtonsMenu title = "חיבור ספרות שונות" navigate = {() => navigation.navigate('AddingNumbers')}/>
+      </View>
+      <TouchableOpacity style={{position: "absolute", top: "70%", left: "1%"}} onPress={() => navigation.navigate('AppInfo')}>
+        <Entypo name="info-with-circle" style={styles.infoIcon}/>
+      </TouchableOpacity>
+    </View>*/
 };
 
 const styles = StyleSheet.create({
@@ -33,24 +51,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: "center",
+    //flex: 1
   },
   list2: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: "center",
     marginBottom: "10%",
+    //flex: 1
   },
   infoIcon: {
+      //position: "absolute",
       fontSize: normalize(30),
+      //justifyContent: "center"
+      //alignSelf: "flex-start",
   },
   infoStyle: {
       position: "absolute",
-      top: "100%",
+      top: "110%",
       left: "2%"
-  },
-  bgimage: {
-    position: "relative",
-    flex: 1,
   }
 });
 

@@ -2,11 +2,9 @@ import React from "react";
 import { Text, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 
 const ButtonsMenu = ({title, navigate}) => {
-    //console.log({navigate});
-    return <TouchableOpacity onPress = {navigate}>
-     <Image style ={styles.image} source = {require("../../assets/alice.jpg")}/>
+    return <TouchableOpacity onPress={navigate}>
+     <Image style={styles.image} source = {require("../../assets/alice.jpg")}/>
         <Text style={styles.text}>{title}</Text>
-        
   </TouchableOpacity>
 }
 const styles = StyleSheet.create({
@@ -18,10 +16,7 @@ const styles = StyleSheet.create({
         //alignSelf: "center"
     },
     text: {
-        justifyContent: "center",
-        alignSelf: "center",
-        fontSize: 20,
-        fontWeight: "bold",
+
     }
 });
 

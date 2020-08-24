@@ -10,10 +10,10 @@ const IntroScreen = ({navigation}) => {
   return <Grid>
   <Row style= {styles.list1}>
     <ButtonsMenu title = "זיהוי קווים ועיגולים" navigate = {() => navigation.navigate('CirclesLinesId')}/>
-    <ButtonsMenu title = "זיהוי קווים ועיגולים מתוך שלל צורות" navigate = {() => navigation.navigate('LearningDigits')}/>
+    <ButtonsMenu title = "זיהוי קווים ועיגולים מתוך שלל צורות" navigate = {() => navigation.navigate('CirclesLinesInShapesId')}/>
   </Row>
   <Row style={styles.list2}>
-    <ButtonsMenu title = "תומכי זכרון לקווים ועיגולים" navigate= {() => navigation.navigate('AddingTwins')}/>
+    <ButtonsMenu title = "תומכי זכרון לקווים ועיגולים" navigate= {() => navigation.navigate('MemoryAid')}/>
   </Row>
 </Grid>
 };
