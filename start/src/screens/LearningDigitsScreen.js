@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, TouchableOpacity, ImageBackground} from "react-native";
+//import {TouchableOpacity} from "react-native-gesture-handler";
+import { Button, StyleSheet, View,TouchableOpacity, ImageBackground} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import ButtonsMenu from "../components/HomeButton"
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import One from "../components/One";
 import Two from "../components/Two";
 import Three from "../components/Three";
@@ -31,25 +32,23 @@ const patterns = [
 ];
 
 const LearningDigitsScreen = ({navigation}) => {
+
     const [stage, setStage] = useState(patterns[0]);
     const [counter, setCounter] = useState(0);
-    
+
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
-        <Row>
-          <HomeButton navigate= {() => navigation.navigate('Home')}/>
+            <HomeButton onPress={() => {navigation.navigate('Home')}}/>
             {stage.name}
-            <NextButton onPress= {() => {
-            if (counter >= patterns.length - 1)
-            {
-                navigation.navigate('LearningDigitsMenu');//in case of 9
-            }
-            else
-            {
-                setStage(patterns[counter + 1]); {/add limit to the counter, when counter reaches the end of the list go to previous screen/}
-                setCounter(counter + 1)
-            }
-           }}/>
-          </Row>
+            <NextButton onPress={() => {
+              if (counter >= patterns.length - 1)
+              {
+                  navigation.navigate('LearningDigitsMenu');//in case of 9
+              }
+              else
+              {
+                  setStage(patterns[counter + 1]);
+                  setCounter(counter + 1)
+            }}}/>
         </ImageBackground>
 };
 
@@ -91,9 +90,17 @@ const styles = StyleSheet.create({
 },
   bgimage: {
     position: "relative",
+    height: '100%',
+    width: '100%',
     //opacity: 0.7,
-    flex: 1,
-  }
+    //flex: 1,
+  },
+  home: {
+    position: "absolute",
+    left: '0%',
+    top: '-4%',
+    zIndex: 1
+}
 });
 
 export default LearningDigitsScreen;
