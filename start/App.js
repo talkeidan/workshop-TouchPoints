@@ -14,7 +14,7 @@ import LearningDigitsScreen from './src/screens/LearningDigitsScreen';
 import { YellowBox, ImageBackground } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import CirclesLinesIdScreen from './src/screens/CirclesLinesIdScreen';//
+//import CirclesLinesIdScreen from './src/screens/CirclesLinesIdScreen';//
 import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdScreen';//
 import MemoryAidScreen from './src/screens/MemoryAidScreen';//
 import { color } from 'react-native-reanimated';
@@ -41,14 +41,13 @@ const Stack = createStackNavigator()
        <Stack.Screen name="CirclesLinesId" component={CirclesLinesIdScreen} />
        <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} /*options={{headerBackTitle: 'תפריט', headerTitle: 'לימוד ספרות',  headerBackground: () => <View style={{height: '100%', width: '100%', backgroundColor: '#a69ab1'}}/>}}*/ />
        <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} />
-       <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} />
        <Stack.Screen name="MemoryAid" component={MemoryAidScreen} />
 
      </Stack.Navigator>
    );
  }
  
-function App() {
+ export default function App() {
    return (
      <NavigationContainer>
        <MyStack />
@@ -103,4 +102,4 @@ function App() {
 //   }
 // );
 
-// export default createAppContainer(navigator);
+//export default createAppContainer(navigator);
