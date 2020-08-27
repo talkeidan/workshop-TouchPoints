@@ -31,7 +31,13 @@ const Stack = createStackNavigator()
  function MyStack() {
    return (
      <Stack.Navigator initialRouteName="Home" title="Touch Points">
-       <Stack.Screen name="Home" component={HomeScreen}/* options={{title: 'דף הבית'}}*//>
+       <Stack.Screen name="Home" component={HomeScreen} options={{title: 'דף הבית', headerStyle:  {
+            backgroundColor: 'pink', height:60
+          },
+          headerTintColor: 'black',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          },}}/>
        <Stack.Screen name="Intro" component={IntroScreen} />
        <Stack.Screen name="LearningDigitsMenu" component={LearningDigitsMenuScreen} />
        <Stack.Screen name="IdentifyDigits" component={IdentifyDigitsScreen} />
@@ -47,6 +53,7 @@ const Stack = createStackNavigator()
    );
  }
  
+
  export default function App() {
    return (
      <NavigationContainer>
@@ -54,6 +61,7 @@ const Stack = createStackNavigator()
      </NavigationContainer>
    );
  }
+ 
 
 // import { createAppContainer } from 'react-navigation';
 // import { createStackNavigator } from 'react-navigation-stack';
