@@ -1,6 +1,6 @@
 import { createAppContainer } from 'react-navigation';
 import * as React from 'react';
-import { I18nManager} from 'react-native';
+import { I18nManager, StyleSheet} from 'react-native';
 //import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./src/menus/HomeScreen";
 import IntroScreen from './src/menus/IntroScreen';
@@ -30,22 +30,26 @@ YellowBox.ignoreWarnings([
 const Stack = createStackNavigator()
  function MyStack() {
    return (
-     <Stack.Navigator initialRouteName="Home" title="Touch Points">
-       <Stack.Screen name="Home" component={HomeScreen}/* options={{title: 'דף הבית'}}*//>
-       <Stack.Screen name="Intro" component={IntroScreen} />
-       <Stack.Screen name="LearningDigitsMenu" component={LearningDigitsMenuScreen} />
-       <Stack.Screen name="IdentifyDigits" component={DigitsIdScreen} />
-       <Stack.Screen name="AddingTwins" component={AddingTwinsScreen} />
-       <Stack.Screen name="AddingNumbers" component={AddingNumbersScreen} />
-       <Stack.Screen name="AppInfo" component={AppInfoScreen} />
-       <Stack.Screen name="CirclesLinesId" component={CirclesLinesIdScreen} />
-       <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} /*options={{headerBackTitle: 'תפריט', headerTitle: 'לימוד ספרות',  headerBackground: () => <View style={{height: '100%', width: '100%', backgroundColor: '#a69ab1'}}/>}}*/ />
-       <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} />
-       <Stack.Screen name="MemoryAid" component={MemoryAidScreen} />
+     <Stack.Navigator initialRouteName="Home" screenOptions= {{title: 'דף הבית', headerStyle:
+     {backgroundColor: 'pink', height:60},headerTintColor: 'black', headerTitleAlign: "center",
+    headerTitleStyle:{fontWeight: 'bold' },}}>
+       <Stack.Screen name="Home" component={HomeScreen} options={{title: 'דף הבית'}}/>
+       <Stack.Screen name="Intro" component={IntroScreen} options={{title: 'מבוא'}}/>
+       <Stack.Screen name="LearningDigitsMenu" component={LearningDigitsMenuScreen}options={{title: 'תפריט לימוד ספרות'}} />
+       <Stack.Screen name="IdentifyDigits" component={DigitsIdScreen} options={{title: 'זיהוי ספרות'}}/>
+       <Stack.Screen name="AddingTwins" component={AddingTwinsScreen} options={{title: 'חיבור תאומים'}}/>
+       <Stack.Screen name="AddingNumbers" component={AddingNumbersScreen} options={{title: 'חיבור מספרים'}}/>
+       <Stack.Screen name="AppInfo" component={AppInfoScreen} options={{title: 'מידע'}}/>
+       <Stack.Screen name="CirclesLinesId" component={CirclesLinesIdScreen} options={{title: 'זיהוי קוויפ ועיגולים'}}/>
+       <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} options={{title: 'לימוד ספרות'}} />
+       <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} options={{title: 'זיהוי עיגולים וקווים מתוך צורות'}}/>
+       <Stack.Screen name="MemoryAid" component={MemoryAidScreen} options={{title: 'תומכי זיכרון'}} />
      </Stack.Navigator>
    );
  }
- 
+const styles = StyleSheet.create({
+});
+
  export default function App() {
    return (
      <NavigationContainer>
@@ -53,6 +57,7 @@ const Stack = createStackNavigator()
      </NavigationContainer>
    );
  }
+ 
 
 // import { createAppContainer } from 'react-navigation';
 // import { createStackNavigator } from 'react-navigation-stack';
