@@ -32,10 +32,10 @@ const patterns = [
   { name: <Nine isNaked={false}></Nine>},
 ];
 
-const LearningDigitsScreen = ({navigation}) => {
+const LearningDigitsScreen = ({ navigation, route }) => {
 
-    const [stage, setStage] = useState(patterns[0]);
-    const [counter, setCounter] = useState(0);
+    const [stage, setStage] = useState(patterns[route.params.init]);
+    const [counter, setCounter] = useState(route.params.init);
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
             <HomeButton onPress={() => {navigation.navigate('Home')}}/>
