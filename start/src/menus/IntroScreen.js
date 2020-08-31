@@ -1,12 +1,23 @@
-import React from "react";
-import { Text, StyleSheet, View, ImageBackground} from "react-native";
+import React, {useState} from "react";
+import { Button, StyleSheet, View, ImageBackground} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 
 
-const IntroScreen = ({navigation}) => {
+const IntroScreen = ({navigation, route}) => {
+
+  React.useEffect(
+    () => navigation.addListener('blur', () => route.params.pause()),
+    []
+  );
+
+  React.useEffect(
+    () => navigation.addListener('focus', () => route.params.play()),
+    []
+  );
+
   return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
     <Grid>
   <Row style= {styles.list1}>

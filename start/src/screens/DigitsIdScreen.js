@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-//import {TouchableOpacity} from "react-native-gesture-handler";
 import { Button, StyleSheet, View,TouchableOpacity, ImageBackground} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -76,22 +75,17 @@ const styles = StyleSheet.create({
       left: "2%"
   },
   points: {
-    //position: "absolute",
-    //opacity: 100,
     alignSelf: "center",
     backgroundColor: "black",
     aspectRatio: 1 / 1,
     height: '45%',
     top: "110%",
     left: "2%"
-    //opacity: 50
 },
   bgimage: {
     position: "relative",
     height: '100%',
     width: '100%',
-    //opacity: 0.7,
-    //flex: 1,
   },
   home: {
     position: "absolute",

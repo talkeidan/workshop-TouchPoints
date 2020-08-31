@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
     mainContainer: {
         width: windowWidth,
         height: windowHeight,
-        //display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,

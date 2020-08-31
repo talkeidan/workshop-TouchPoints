@@ -1,39 +1,51 @@
 import React, {useState} from "react";
-import { StyleSheet, View, TouchableOpacity, ImageBackground} from "react-native";
+import { StyleSheet, Button, TouchableOpacity, ImageBackground} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import { Video, Audio } from 'expo-av';
+import { Octicons } from '@expo/vector-icons';
 
 
 export default HomeScreen = ({navigation}) =>
 {
   const [isPlay, setIsPlay] = useState(true);
+  const [isMute, setIsMute] = useState(false);
+
+  const music = <Video
+  source={require("../../assets/playground.mp3")}
+  shouldPlay={isPlay && !isMute}
+  isLooping={true}
+  volume={0.1}
+  useNativeControls ={false}
+/>
+
+React.useEffect(
+  () => navigation.setOptions({headerRight: () => <TouchableOpacity style={{marginEnd: 10}} onPress={() => {
+    setIsMute(!isMute)
+  }}>
+    <Octicons style={styles.mute} name={isMute? "unmute" : "mute"} size={28} color="white"/>
+  </TouchableOpacity>})
+);
     
     React.useEffect(
       () => navigation.addListener('focus', () => setIsPlay(true)),
       []
     );
   
-    React.useEffect(
-      () => navigation.addListener('blur', () => setIsPlay(false)),
-      []
-    );
+     React.useEffect(
+       () => navigation.addListener('blur', () => setIsPlay(false)),
+       []
+     );
   return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-    <Video
-    source={require("../../assets/playground.mp3")}
-    shouldPlay={isPlay}
-    isLooping={true}
-    volume={0.1}
-    useNativeControls ={false}
-  />
+    {music}
   <Grid style={{flex: 1}}>
     <Row style= {styles.list1}>
-      <ButtonsMenu title = "מבוא" navigate = {() => {
-        navigation.navigate('Intro')
-        }}/>
-      <ButtonsMenu title = "לימוד ספרות" navigate = {() => navigation.navigate('LearningDigitsMenu')}/>
+      <ButtonsMenu title="מבוא" navigate={() => 
+        navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
+      <ButtonsMenu title = "לימוד ספרות" navigate = {() => 
+        navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits')}/>
     </Row>
     <Row style={styles.list2}>
@@ -74,5 +86,11 @@ styles = StyleSheet.create({
   bgimage: {
     position: "relative",
     flex: 1,
+  },
+  mute: {
+    borderColor: "white", 
+    borderWidth: 2, 
+    borderRadius: 10, 
+    paddingHorizontal: 5
   }
 });

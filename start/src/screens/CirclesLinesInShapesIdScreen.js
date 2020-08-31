@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   },
   bgimage: {
     position: "relative",
-    //opacity: 0.7,
     flex: 1,
   }
 });
