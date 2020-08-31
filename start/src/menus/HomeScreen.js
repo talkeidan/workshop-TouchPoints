@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import { StyleSheet, View, TouchableOpacity, ImageBackground} from "react-native";
+import { StyleSheet, Button, TouchableOpacity, ImageBackground} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import { Video, Audio } from 'expo-av';
+import { Octicons } from '@expo/vector-icons';
 
 
 export default HomeScreen = ({navigation}) =>
@@ -12,12 +13,21 @@ export default HomeScreen = ({navigation}) =>
   const [isPlay, setIsPlay] = useState(true);
   const [isMute, setIsMute] = useState(false);
 
- /// navigation.setOptions(headerRight: )
- React.useEffect(
-    navigation.setOptions({headerRight: () => <Button onPress={() => setIsMute(true)}
-      title="Mute"
-      color="#fff"/>})
- );
+  const music = <Video
+  source={require("../../assets/playground.mp3")}
+  shouldPlay={isPlay && !isMute}
+  isLooping={true}
+  volume={0.1}
+  useNativeControls ={false}
+/>
+
+React.useEffect(
+  () => navigation.setOptions({headerRight: () => <TouchableOpacity style={{marginEnd: 10}} onPress={() => {
+    setIsMute(!isMute)
+  }}>
+    <Octicons style={styles.mute} name={isMute? "unmute" : "mute"} size={28} color="white"/>
+  </TouchableOpacity>})
+);
     
     React.useEffect(
       () => navigation.addListener('focus', () => setIsPlay(true)),
@@ -29,13 +39,7 @@ export default HomeScreen = ({navigation}) =>
        []
      );
   return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-    <Video
-    source={require("../../assets/playground.mp3")}
-    shouldPlay={isPlay && !isMute}
-    isLooping={true}
-    volume={0.1}
-    useNativeControls ={false}
-  />
+    {music}
   <Grid style={{flex: 1}}>
     <Row style= {styles.list1}>
       <ButtonsMenu title="מבוא" navigate={() => 
@@ -82,5 +86,11 @@ styles = StyleSheet.create({
   bgimage: {
     position: "relative",
     flex: 1,
+  },
+  mute: {
+    borderColor: "white", 
+    borderWidth: 2, 
+    borderRadius: 10, 
+    paddingHorizontal: 5
   }
 });
