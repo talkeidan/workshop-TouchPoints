@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { Button, StyleSheet, View,TouchableOpacity, ImageBackground} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -6,44 +6,23 @@ import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import One from "../components/One";
-import Two from "../components/Two";
-import Three from "../components/Three";
-import Four from "../components/Four";
-import Five from "../components/Five";
-import Six from "../components/Six";
-import Seven from "../components/Seven";
-import Eight from "../components/Eight";
-import Nine from "../components/Nine";
 
-const patterns = [
-    { name: <One isNaked={true}></One>},
-    { name: <Two isNaked={true}></Two>},
-    { name: <Three isNaked={true}></Three>},
-    { name: <Four isNaked={true}></Four>},
-    { name: <Five isNaked={true}></Five>},
-    { name: <Six isNaked={true}></Six>},
-    { name: <Seven isNaked={true}></Seven>},
-    { name: <Eight isNaked={true}></Eight>},
-    { name: <Nine isNaked={true}></Nine>},
-];
 
-const DigitsIdScreen = ({navigation}) => {
-
-    const [stage, setStage] = useState(patterns[0]);
+const DigitsIdScreen = ({navigation, route}) => {
+    //const [stage, setStage] = useState(route.params.arr[0]);
     const [counter, setCounter] = useState(0);
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
             <HomeButton onPress={() => {navigation.navigate('Home')}}/>
-            {stage.name}
+            {route.params.arr[counter].name}
             <NextButton onPress={() => {
-              if (counter >= patterns.length - 1)
+              if (counter >= 8)
               {
-                  navigation.navigate('LearningDigitsMenu');//in case of 9
+                  navigation.navigate('Home');//in case of 9
               }
               else
               {
-                  setStage(patterns[counter + 1]);
+                  //setStage(route.params.arr[counter + 1]);
                   setCounter(counter + 1)
             }}}/>
         </ImageBackground>
