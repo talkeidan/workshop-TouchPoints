@@ -33,7 +33,7 @@ const Stack = createStackNavigator()
      <Stack.Navigator initialRouteName="Home" screenOptions= {{title: 'TouchPoints', headerStyle:
      {backgroundColor: 'pink', height: 60}, headerTintColor: '#187cc2', headerTitleAlign: "center",
     headerTitleStyle:{borderColor: 'black', fontFamily: 'Arial Rounded MT Bold', fontWeight: 'bold' },}}>
-       <Stack.Screen name="Home" component={HomeScreen} options={{title: 'TouchPoints', headerTitleStyle: {fontSize: "35%", fontFamily: 'Arial Rounded MT Bold'}}}/>
+       <Stack.Screen name="Home" component={HomeScreen} options={{title: 'TouchPoints', headerTitleStyle: {fontSize: 35, fontFamily: 'Arial Rounded MT Bold'}}}/>
        <Stack.Screen name="Intro" component={IntroScreen} options={{title: 'מבוא'}}/>
        <Stack.Screen name="LearningDigitsMenu" component={LearningDigitsMenuScreen}options={{title: 'תפריט לימוד ספרות'}} />
        <Stack.Screen name="IdentifyDigits" component={DigitsIdScreen} options={{title: 'זיהוי ספרות'}}/>
