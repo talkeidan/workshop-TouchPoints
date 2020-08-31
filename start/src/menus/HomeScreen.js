@@ -10,30 +10,38 @@ import { Video, Audio } from 'expo-av';
 export default HomeScreen = ({navigation}) =>
 {
   const [isPlay, setIsPlay] = useState(true);
+  const [isMute, setIsMute] = useState(false);
+
+ /// navigation.setOptions(headerRight: )
+ React.useEffect(
+    navigation.setOptions({headerRight: () => <Button onPress={() => setIsMute(true)}
+      title="Mute"
+      color="#fff"/>})
+ );
     
     React.useEffect(
       () => navigation.addListener('focus', () => setIsPlay(true)),
       []
     );
   
-    React.useEffect(
-      () => navigation.addListener('blur', () => setIsPlay(false)),
-      []
-    );
+     React.useEffect(
+       () => navigation.addListener('blur', () => setIsPlay(false)),
+       []
+     );
   return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
     <Video
     source={require("../../assets/playground.mp3")}
-    shouldPlay={isPlay}
+    shouldPlay={isPlay && !isMute}
     isLooping={true}
     volume={0.1}
     useNativeControls ={false}
   />
   <Grid style={{flex: 1}}>
     <Row style= {styles.list1}>
-      <ButtonsMenu title = "מבוא" navigate = {() => {
-        navigation.navigate('Intro')
-        }}/>
-      <ButtonsMenu title = "לימוד ספרות" navigate = {() => navigation.navigate('LearningDigitsMenu')}/>
+      <ButtonsMenu title="מבוא" navigate={() => 
+        navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
+      <ButtonsMenu title = "לימוד ספרות" navigate = {() => 
+        navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits')}/>
     </Row>
     <Row style={styles.list2}>

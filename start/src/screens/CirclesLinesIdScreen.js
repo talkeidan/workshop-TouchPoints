@@ -12,7 +12,7 @@ import LinesAndCirclesId from "../components/intro/LinesAndCirclesId";
 const patterns = [
    { name: <LinesId></LinesId>},
    { name: <CirclesId></CirclesId>},
-  { name: <LinesAndCirclesId></LinesAndCirclesId>},
+   { name: <LinesAndCirclesId></LinesAndCirclesId>},
 ];
 
 const CirclesLinesIdScreen = ({navigation}) => {
@@ -66,8 +66,6 @@ const styles = StyleSheet.create({
     position: "relative",
     height: '100%',
     width: '100%'
-    //opacity: 0.7,
-    //flex: 1,
   }
 });
 

@@ -6,7 +6,17 @@ import DigitsButtonsMenu from "../components/DigitsButtonsMenu"
 import One from "../components/One";
 
 
-const LearningDigitsMenuScreen = ({navigation}) => {
+const LearningDigitsMenuScreen = ({navigation, route}) => {
+  React.useEffect(
+    () => navigation.addListener('blur', () => route.params.pause()),
+    []
+  );
+
+  React.useEffect(
+    () => navigation.addListener('focus', () => route.params.play()),
+    []
+  );
+
     return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
       <Grid>
     <Row style= {styles.list1}>
@@ -37,7 +47,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: "center",
-    //flex: 1
   },
   bgimage: {
     position: "relative",

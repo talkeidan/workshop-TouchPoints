@@ -79,22 +79,17 @@ const styles = StyleSheet.create({
       left: "2%"
   },
   points: {
-    //position: "absolute",
-    //opacity: 100,
     alignSelf: "center",
     backgroundColor: "black",
     aspectRatio: 1 / 1,
     height: '45%',
     top: "110%",
     left: "2%"
-    //opacity: 50
 },
   bgimage: {
     position: "relative",
     height: '100%',
     width: '100%',
-    //opacity: 0.7,
-    //flex: 1,
   },
   home: {
     position: "absolute",

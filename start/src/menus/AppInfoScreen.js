@@ -26,13 +26,11 @@ const styles = StyleSheet.create({
   textContainer: {
     width: "50%",
     height: '70%',
-    //borderWidth: normalize(5),
     textAlign: "justify",
     textAlignVertical: "center",
     fontSize: normalize(9),
     margin: normalize(25),
     marginTop: normalize(20),
-    //letterSpacing: 1.25,
     lineHeight: 39,
     padding: "2%",
     writingDirection: 'rtl',
