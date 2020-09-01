@@ -4,7 +4,8 @@ import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
-
+import Balloons from "../animations/Balloons";
+import BackButton from "../components/BackButton"
 
 const IntroScreen = ({navigation, route}) => {
 
@@ -18,8 +19,8 @@ const IntroScreen = ({navigation, route}) => {
     []
   );
 
-  return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-    <Grid>
+  return <View style={{justifyContent: "center", height: '100%', width: '100%'}}>
+    <Grid style={{marginTop: "10%", zIndex: 1}}>
   <Row style= {styles.list1}>
     <ButtonsMenu title = "זיהוי קווים ועיגולים" navigate = {() => navigation.navigate('CirclesLinesId')}/>
     <ButtonsMenu title = "זיהוי קווים ועיגולים מתוך שלל צורות" navigate = {() => navigation.navigate('CirclesLinesInShapesId')}/>
@@ -28,7 +29,9 @@ const IntroScreen = ({navigation, route}) => {
     <ButtonsMenu title = "תומכי זכרון לקווים ועיגולים" navigate= {() => navigation.navigate('MemoryAid')}/>
   </Row>
 </Grid>
-</ImageBackground>
+<Balloons style={styles.bgimage}/>
+<BackButton onPress={() => navigation.goBack()}/>
+</View>
 };
 
 const styles = StyleSheet.create({

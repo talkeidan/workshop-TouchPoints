@@ -1,10 +1,23 @@
 import React from "react";
 import { Text, StyleSheet, View, ImageBackground, Button} from "react-native";
 import normalize from "react-native-normalize";
+import BackButton from "../components/BackButton"
+import Balloons from "../animations/Balloons";
 
 
-const AppInfoScreen = () => {
-  return <ImageBackground source={require('../../assets/stars.png')} style={{height: '100%', width: '100%'}}>
+const AppInfoScreen = ({navigation, route}) => {
+
+  React.useEffect(
+    () => navigation.addListener('blur', () => route.params.pause()),
+    []
+  );
+
+  React.useEffect(
+    () => navigation.addListener('focus', () => route.params.play()),
+    []
+  );
+
+  return <View style={{justifyContent: "center", height: '100%', width: '100%'}}>
     <ImageBackground source={require('../../assets/note.png') } resizeMode='contain' style={styles.bgimage}>
     <Text style={styles.textContainer}>
     האפליקציה פותחה על מנת ללמד ילדים, ובפרט ילדים בעלי לקויות למידה חשבון בסיסי: למנות ולחבר ספרות עד 10.
@@ -13,7 +26,9 @@ const AppInfoScreen = () => {
     וכמו כן, להשתמש בשיטה על מנת להצליח לחבר ספרות עד עשר.
     </Text>
   </ImageBackground>
-    </ImageBackground>
+  <BackButton onPress={() => navigation.goBack()}/>
+  <Balloons style={styles.anim}/>
+    </View>
   
 };
 
@@ -26,7 +41,7 @@ const styles = StyleSheet.create({
   textContainer: {
     width: "50%",
     height: '70%',
-    textAlign: "justify",
+    textAlign: "center",
     textAlignVertical: "center",
     fontSize: normalize(9),
     margin: normalize(25),
@@ -43,6 +58,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1
+  },
+  anim: {
+    position: "relative",
+    flex: 1,
   }
 });
 
