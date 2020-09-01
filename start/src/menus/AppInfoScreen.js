@@ -18,7 +18,7 @@ const AppInfoScreen = ({navigation, route}) => {
   );
 
   return <View style={{justifyContent: "center", height: '100%', width: '100%'}}>
-    <ImageBackground source={require('../../assets/note.png') } resizeMode='contain' style={styles.bgimage}>
+    <ImageBackground source={require('../../assets/note.png')} resizeMode='contain' style={styles.bgimage}>
     <Text style={styles.textContainer}>
     האפליקציה פותחה על מנת ללמד ילדים, ובפרט ילדים בעלי לקויות למידה חשבון בסיסי: למנות ולחבר ספרות עד 10.
     קהל היעד הוא ילדים בגילאי גן חובה ועד כיתה א', השיטה פותחה על ידי רונית קידן, מורה להוראה מתקנת, שביקשה ליצור חוויה אינטרקטיבית עבור הילדים.
