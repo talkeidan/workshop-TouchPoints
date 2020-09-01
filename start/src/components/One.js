@@ -14,7 +14,7 @@ const One = ({onPress, isNaked}) => {
     const [counter, setCounter] = useState(1);
     const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
-        
+    
 
     return <View style={styles.mainContainer}>
         <ImageBackground style={styles.bgimage} source={
