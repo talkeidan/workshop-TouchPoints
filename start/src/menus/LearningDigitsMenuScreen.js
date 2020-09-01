@@ -2,8 +2,10 @@ import React from "react";
 import { ImageBackground, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ButtonsMenu from "../components/ButtonsMenu"
+import BackButton from "../components/BackButton"
 import DigitsButtonsMenu from "../components/DigitsButtonsMenu"
 import One from "../components/One";
+import Balloons from "../animations/Balloons";
 
 
 const LearningDigitsMenuScreen = ({navigation, route}) => {
@@ -17,8 +19,8 @@ const LearningDigitsMenuScreen = ({navigation, route}) => {
     []
   );
 
-    return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-      <Grid>
+    return <View style={{height: '100%', width: '100%'}}>
+      <Grid style={{zIndex: 1}}>
     <Row style= {styles.list1}>
 <ButtonsMenu title="1" navigate={() => navigation.navigate('LearningDigits', {init: 0})}/>
       <ButtonsMenu title="2" navigate={() => navigation.navigate('LearningDigits', {init: 1})}/>
@@ -34,8 +36,11 @@ const LearningDigitsMenuScreen = ({navigation, route}) => {
       <ButtonsMenu title="8" navigate={() => navigation.navigate('LearningDigits', {init: 7})}/>
       <ButtonsMenu title="9" navigate={() => navigation.navigate('LearningDigits', {init: 8})}/>
     </Row>
+    <BackButton onPress={() => navigation.goBack()}/>
     </Grid>
-  </ImageBackground>
+  <Balloons style={styles.bgimage}/>
+  </View>
+
 };
 
 const styles = StyleSheet.create({

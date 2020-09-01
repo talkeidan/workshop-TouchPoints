@@ -25,7 +25,7 @@ YellowBox.ignoreWarnings([
 const Stack = createStackNavigator()
  function MyStack() {
    return (
-     <Stack.Navigator initialRouteName="Home" screenOptions= {{title: 'TouchPoints', headerStyle:
+     <Stack.Navigator initialRouteName="Home" headerMode="none" screenOptions= {{title: 'TouchPoints', headerStyle:
      {backgroundColor: 'pink', height: 60}, headerTintColor: '#187cc2', headerTitleAlign: "center",
     headerTitleStyle:{borderColor: 'black', fontFamily: 'Arial Rounded MT Bold', fontWeight: 'bold' },}}>
        <Stack.Screen name="Home" component={HomeScreen} options={{title: 'TouchPoints', headerTitleStyle: {fontSize: 35, fontFamily: 'Arial Rounded MT Bold'}}}/>
