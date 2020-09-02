@@ -18,11 +18,9 @@ const CirclesLinesInShapesIdScreen = ({navigation}) => {
     const [counter, setCounter] = useState(0);
     
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
-    <Grid>
-     <Row>
-        <HomeButton navigate= {() => navigation.navigate('Home')}/>
+        <HomeButton onPress={() => navigation.navigate('Home')}/>
         {stage.name}
-        <NextButton onPress= {() => {
+        <NextButton onPress={() => {
             if (counter >= patterns.length - 1)
             {
                 navigation.navigate('Intro');
@@ -33,8 +31,6 @@ const CirclesLinesInShapesIdScreen = ({navigation}) => {
                 setCounter(counter + 1)
             }
         }}/>
-        </Row>
-        </Grid>
         </ImageBackground>
 };
 
@@ -65,7 +61,7 @@ const styles = StyleSheet.create({
   },
   bgimage: {
     position: "relative",
-    flex: 1,
+    flex: 1
   }
 });
 

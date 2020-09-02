@@ -31,8 +31,6 @@ const Two = ({onPress, isNaked}) => {
             setCounter={() => setCounter(counter - 1)} 
             setRewardState={(rewardState) => setRewardState('reward')} 
             count={counter}/>
-        {/* <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/> */}
-        {/* <Point unpressedStyle={styles.button2} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/> */}
         </ImageBackground>
     </View>
     

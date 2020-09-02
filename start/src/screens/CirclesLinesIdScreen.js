@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
+import { Dimensions, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
 import ButtonsMenu from "../components/HomeButton"
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
@@ -8,6 +8,9 @@ import NextButton from "../components/NextButton";
 import CirclesId from "../components/intro/CirclesId";
 import LinesId from "../components/intro/LinesId";
 import LinesAndCirclesId from "../components/intro/LinesAndCirclesId";
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height - 60;
 
 const patterns = [
    { name: <LinesId></LinesId>},
@@ -21,9 +24,9 @@ const CirclesLinesIdScreen = ({navigation}) => {
 
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
-        <HomeButton onPress= {() => {navigation.navigate('Home')}}/>
+        <HomeButton onPress={() => {navigation.navigate('Home')}}/>
         {stage.name}
-        <NextButton onPress= {() => {
+        <NextButton onPress={() => {
             if (counter >= patterns.length - 1)
             {
                 navigation.navigate('Intro');
@@ -38,34 +41,9 @@ const CirclesLinesIdScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 30,
-    textAlign: 'center'
-  },
-  list1: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: "center",
-  },
-  list2: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: "center",
-    marginBottom: "10%"
-  },
-  infoIcon: {
-      fontSize: normalize(30),
-      alignSelf: "flex-start"
-  },
-  infoStyle: {
-      position: "absolute",
-      top: "100%",
-      left: "2%"
-  },
   bgimage: {
     position: "relative",
-    height: '100%',
-    width: '100%'
+    flex: 1
   }
 });
 
