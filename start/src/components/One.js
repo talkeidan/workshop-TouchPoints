@@ -30,12 +30,6 @@ const One = ({onPress, isNaked}) => {
             count={counter}/>
         </ImageBackground>
     </View>
-    {/*return <View style={styles.mainContainer}>
-        <ImageBackground style={styles.bgimage} source={require("../../assets/kid1.png")} resizeMode="contain">
-            <Confetti rewardState={rewardState}/>
-            <Point unpressedStyle={styles.button} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/>
-        </ImageBackground>
-</View>*/}
 }
 
 const styles = StyleSheet.create({

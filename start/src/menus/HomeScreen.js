@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, View, TouchableOpacity, Image} from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image, Dimensions} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -15,6 +15,9 @@ import Seven from "../components/Seven";
 import Eight from "../components/Eight";
 import Nine from "../components/Nine";
 import Balloons from "../animations/Balloons";
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+const isMobile = windowWidth <= 812 && true;
 
 const digits = [
   { name: <One isNaked={true}></One>},
@@ -71,50 +74,75 @@ React.useEffect(
      );
      return <View style={{height: '100%', width: '100%'}}>
     {music}
-  <Grid style={{zIndex: 1, flex: 1}}>
-  <Image style={{height: "25%", width: '60%', alignSelf: "center"}} source={require('../../assets/header.png')}/>
-    <Row style= {styles.list1}>
-      <ButtonsMenu title="מבוא" navigate={() => 
+  <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu title = "לימוד ספרות" navigate = {() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
-    </Row>
-    <Row style={styles.list2}>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => navigation.navigate('AddingNumbers')}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
-         <MaterialCommunityIcons name="information" style={styles.muteIcon}/>
+         <MaterialCommunityIcons name="information" style={styles.icon}/>
         </TouchableOpacity>
         <TouchableOpacity style={styles.mute} onPress={() => {setIsMute(!isMute)}}>
-    <MaterialCommunityIcons style={styles.muteIcon} name="music-circle" color={isMute? "grey" : "black"}/>
-  </TouchableOpacity>
-      <ButtonsMenu title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
-      <ButtonsMenu title = "חיבור ספרות שונות" navigate= {() => navigation.navigate('AddingNumbers')}/>
-    </Row>
-  </Grid>
+          <MaterialCommunityIcons style={styles.icon} name="music-circle" color={isMute? "grey" : "black"}/>
+        </TouchableOpacity>
   <Balloons style={styles.bgimage}/>
   </View>
-  // return <ImageBackground style={styles.bgimage} source={require("../../assets/stars.png")} resizeMode="cover">
-  //   {music}
-  // <Grid style={{flex: 1}}>
-  //   <Row style= {styles.list1}>
-  //     <ButtonsMenu title="מבוא" navigate={() => 
-  //       navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-  //     <ButtonsMenu title = "לימוד ספרות" navigate = {() => 
-  //       navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-  //     <ButtonsMenu title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
-  //   </Row>
-  //   <Row style={styles.list2}>
-  //       <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo')}>
-  //        <Entypo name="info-with-circle" style={styles.infoIcon}/>
-  //       </TouchableOpacity>
-  //     <ButtonsMenu title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
-  //     <ButtonsMenu title = "חיבור ספרות שונות" navigate= {() => navigation.navigate('AddingNumbers')}/>
-  //   </Row>
-  // </Grid>
-  // </ImageBackground>
 };
 
 styles = StyleSheet.create({
+  buttonMenu1: {
+    aspectRatio: 1 / 1,
+    height: '25%',
+    borderRadius: 20,
+    zIndex: 1,
+    borderWidth: 1,
+    left: isMobile? "20%" : "10%", 
+    top: "30%",
+    position: "absolute"
+  },
+  buttonMenu2: {
+    aspectRatio: 1 / 1,
+    height: '25%',
+    borderRadius: 20,
+    zIndex: 1,
+    borderWidth: 1,
+    left: isMobile? "45%" : "40%",
+    top: "30%",
+    position: "absolute",
+  },
+  buttonMenu3: {
+    aspectRatio: 1 / 1,
+    height: '25%',
+    borderRadius: 20,
+    zIndex: 1,
+    borderWidth: 1,
+    right: isMobile? "20%" : "10%", 
+    top: "30%",
+    position: "absolute",
+  },
+  buttonMenu4: {
+    aspectRatio: 1 / 1,
+    height: '25%',
+    borderRadius: 20,
+    zIndex: 1,
+    borderWidth: 1,
+    left: isMobile? "32%" : "25%",
+    top: isMobile? "63%" : "65%",
+    position: "absolute",
+  },
+  buttonMenu5: {
+    aspectRatio: 1 / 1,
+    height: '25%',
+    borderRadius: 20,
+    zIndex: 1,
+    borderWidth: 1,
+    right: isMobile? "32%" : "25%",
+    top: isMobile? "63%" : "65%",
+    position: "absolute",
+  },
   text: {
     fontSize: 30,
     textAlign: 'center'
@@ -128,22 +156,23 @@ styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: "center",
-    marginBottom: "10%",
+    marginBottom: "5%",
   },
   infoIcon: {
-      fontSize: normalize(25),
-      borderColor: "black", 
+    fontSize: normalize(25),
+    borderColor: "black", 
     borderWidth: 2, 
     borderRadius: 45, 
     paddingHorizontal: 3,
   },
   infoStyle: {
-      position: "absolute",
-      top: "100%",
-      left: "2%"
+    position: "absolute",
+    bottom: "5%",
+    left: "2%",
+    zIndex: 1
   },
-  muteIcon: {
-    fontSize: normalize(30),
+  icon: {
+    fontSize: isMobile? 60 : 80,
   },
   bgimage: {
     position: "relative",
@@ -151,8 +180,8 @@ styles = StyleSheet.create({
   },
   mute: {
     position: "absolute",
-    top: "60%",
+    bottom: isMobile? "20%" : "15%",
     left: "2%",
-    
+    zIndex: 1
   }
 });

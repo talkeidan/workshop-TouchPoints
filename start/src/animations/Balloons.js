@@ -3,22 +3,24 @@ import { Dimensions, View } from "react-native";
 import LottieView from 'lottie-react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const screenWidth = Math.round(Dimensions.get('window').width);
-const screenHeight = Math.round(Dimensions.get('window').height);
+
 
 export default class Balloons extends React.Component {
+    
     componentDidUpdate() {
         this.animation.play();
     }
   
     render() {
+        const screenWidth = Math.round(Dimensions.get('window').width);
+        const screenHeight = Math.round(Dimensions.get('window').height);
       return (
         <View
         style={{
           // backgroundColor: 'red',
           position: 'absolute',
-          height: '100%',
-          width: '100%',
+          height: screenHeight,
+          width: screenWidth,
           justifyContent: 'flex-end',
         }}
       >
@@ -30,8 +32,8 @@ export default class Balloons extends React.Component {
          // duration={3000} 
           loop={true} 
           autoPlay={true} 
-          resizeMode= "cover"
-          style={{width: screenWidth, height: screenHeight}}
+          resizeMode="cover"
+          //style={{width: screenWidth, height: screenHeight}}
         />
         </View>
       );
