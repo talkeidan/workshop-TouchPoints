@@ -6,7 +6,7 @@ import { Ionicons,Feather } from "@expo/vector-icons";
 export default class WrongCircle extends React.Component {
     handleViewRef = ref => this.view = ref;
     
-    shake = () => this.view.shake(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
+    shake = () => this.view.shake(800);
     
     render() {
       return (
