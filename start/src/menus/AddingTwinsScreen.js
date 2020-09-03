@@ -17,7 +17,8 @@ const AddingTwinsScreen = ({navigation}) => {
     const [counter, setCounter] = useState(0);
 
 
-    return <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 
+    return <View style={styles.mainContainer}> 
+    <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 
         <HomeButton onPress= {() => {navigation.navigate('Home')}}/>
         {stage.name}
         <NextButton onPress= {() => {
@@ -32,9 +33,14 @@ const AddingTwinsScreen = ({navigation}) => {
             }
         }}/>
         </ImageBackground>
+        </View>
 };
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#01dbca"
+  },
   text: {
     fontSize: 30,
     textAlign: 'center'
@@ -61,9 +67,12 @@ const styles = StyleSheet.create({
   },
   bgimage: {
     position: "relative",
+    //marginBottom: 20,
+    //flexShrink: 2,
     height: '100%',
     width: '100%',
     backgroundColor: "#01dbca",
+    flex: 0.8,
   }
 });
 

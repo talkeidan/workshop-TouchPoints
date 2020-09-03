@@ -40,10 +40,7 @@ const OneTwins = ({onPress, isNaked}) => {
             setRewardState={null} 
             count={counter}/>
         </ImageBackground>
-        <NumbersLine result="2" setRewardState={(rewardState) => setRewardState('reward')}>
-
-        </NumbersLine>
-
+        <NumbersLine result="2" setRewardState={(rewardState) => setRewardState('reward')}/>
     </View>
     {/*return <View style={styles.mainContainer}>
         <ImageBackground style={styles.bgimage} source={require("../../assets/kid1.png")} resizeMode="contain">
@@ -61,10 +58,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
-        position:'relative'
+        position:'relative',
     },
       bgimage:{
-        flex: 1,
+          flex: 1,
           position: "absolute",
           marginTop: "2%",
           borderRadius: 20,
