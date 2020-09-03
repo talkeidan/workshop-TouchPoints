@@ -4,32 +4,38 @@ import ButtonsMenu from "../components/HomeButton"
 import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
+import shuffleDeck from "../menus/HomeScreen";
 import NextButton from "../components/NextButton";
 import OneTwins from "../components/twins/OneTwins";
+import Confetti from "../animations/Confetti";
+import AddingPair from "../components/AddingPair";
 
 
-const patterns = [
-   { name: <OneTwins></OneTwins>},
-];
-
-const AddingTwinsScreen = ({navigation}) => {
-    const [stage, setStage] = useState(patterns[0]);
+const AddingDiffDigitsScreen = ({navigation, route}) => {
+    const [first, setFirst] = useState(route.params.arr[0].first);
+    const [second, setSecond] = useState(route.params.arr[0].second);
     const [counter, setCounter] = useState(0);
-
+    const [rewardState, setRewardState] = useState('rest');
+    const [isDisabled, setIsDisabled] = useState(false);
+    console.log(route.params.arr[0].value);
 
     return <View style={styles.mainContainer}> 
     <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 
+        <Confetti rewardState={rewardState}/>
         <HomeButton onPress= {() => {navigation.navigate('Home')}}/>
-        {stage.name}
+        <AddingPair isDisabled={isDisabled} setIsDisabled={() => setIsDisabled(true)} isFirstBigger={route.params.arr[counter].flag} first={first} second={second} setReward={() => setRewardState('reward')} result={route.params.arr[counter].value}/>
         <NextButton onPress= {() => {
-            if (counter >= patterns.length - 1)
+            if (counter >= 4)
             {
                 navigation.navigate('Home');
             }
             else
             {
-                setStage(patterns[counter + 1]); {/*add limit to the counter, when counter reaches the end of the list go to previous screen*/}
-                setCounter(counter + 1)
+                setFirst(route.params.arr[counter + 1].first);
+                setSecond(route.params.arr[counter + 1].second);
+                setCounter(counter + 1);
+                setRewardState('rest');
+                setIsDisabled(false)
             }
         }}/>
         </ImageBackground>
@@ -74,4 +80,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AddingTwinsScreen;
+export default AddingDiffDigitsScreen;

@@ -1,46 +1,42 @@
 import React, {useState, useEffect, useRef} from "react";
-import { TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
+import { TouchableOpacity, Button, Text, StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import normalize from "react-native-normalize";
-import Point from "../Point";
+import Point from "./Point";
 import * as Animatable from 'react-native-animatable';
-import Confetti from "../../animations/Confetti";
-import NumbersLine from "../NumbersLine";
+import Confetti from "../animations/Confetti";
+import NumbersLine from "./NumbersLine";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const OneTwins = ({onPress, isNaked}) => {
-    const [counter, setCounter] = useState(10);
-    const [ isPress, setIsPress ] = useState(false);
-    const [rewardState, setRewardState] = useState('rest');
-    console.log(rewardState);
-
+const AddingPair = ({isDisabled, setIsDisabled, isFirstBigger, first, second, setReward, result}) => {
     return <View style={styles.mainContainer}>
-        <Confetti rewardState={rewardState}/>
-
          <Text style={styles.Text1}>+</Text>
-         <Text style={styles.Text2}>=</Text>
-        <ImageBackground style={styles.bgimage} source={require("../../../assets/number1.png")} resizeMode="contain" >
-            <Point 
-            unpressedStyle={isNaked? styles.transButton : styles.button} 
-            pressedStyle={isNaked? styles.button : {}}
-            setCounter={() => setCounter(counter - 1)} 
-            setRewardState={null} 
-            count={counter}/>
-        </ImageBackground>
-        <ImageBackground style={styles.bgimage2} source={require("../../../assets/number1.png")} 
-            resizeMode="contain"
-            >
-            <Point 
-            unpressedStyle={isNaked? styles.transButton : styles.button2} 
-            pressedStyle={isNaked? styles.button2 : {}}
-            setCounter={() => setCounter(counter - 1)} 
-            setRewardState={null} 
-            count={counter}/>
-        </ImageBackground>
-        <NumbersLine result="2" setRewardState={(rewardState) => setRewardState('reward')}/>
+         <View style={styles.addContainerLeft}>
+         <TouchableOpacity onPress={() => {
+             if (isFirstBigger) {
+                 alert("great job!")
+                 setIsDisabled();
+             }
+         }} disabled={isDisabled}>
+         {first}
+         </TouchableOpacity>
+         </View>
+         <View style={styles.addContainer}>
+         <TouchableOpacity onPress={() => {
+             if (!isFirstBigger) {
+                 alert("great job!")
+                 setIsDisabled();
+             }
+         }} disabled={isDisabled}>
+         {second}
+         </TouchableOpacity>
+         </View>
+        <NumbersLine result={result.toString()} setRewardState={() => {
+            setReward();
+            }}/>
     </View>
 }
 
@@ -48,8 +44,6 @@ const styles = StyleSheet.create({
     mainContainer: {
         width: windowWidth,
         height: windowHeight,
-        justifyContent: 'center',
-        alignItems: 'center',
         flex: 1,
         position:'relative',
     },
@@ -101,7 +95,6 @@ const styles = StyleSheet.create({
         borderRadius: normalize(35),
         left: isMobile? "55%" : '70%',
         top: isMobile? '0%': '8%'
-
       },
       Text1: {
         fontSize:isMobile? 60: 50,
@@ -109,8 +102,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         left: isMobile? "0%" : '70%',
         top: isMobile? '8%': '8%'
-
-
       },
       Text2: {
         fontSize:isMobile? 60: 50,
@@ -118,8 +109,25 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         left: isMobile? "0%" : '70%',
         top: isMobile? '0%': '8%'
-
       },
+      addContainer: {
+        position: "absolute",
+        width: isMobile? "15%" : "25%",
+        aspectRatio: 1/1,
+        borderRadius: 150,
+        backgroundColor: "pink",
+        top: isMobile? "22%" : "22%",
+        left: isMobile? "52%" : "54%",
+    },
+    addContainerLeft: {
+      position: "absolute",
+      width: isMobile? "15%" : "25%",
+      aspectRatio: 1/1,
+      borderRadius: 150,
+      backgroundColor: "pink",
+      top: isMobile? "22%" : "22%",
+      left: isMobile? "32%" : "21%",
+  }
 });
 
-export default OneTwins;
+export default AddingPair;

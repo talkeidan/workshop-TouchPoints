@@ -14,24 +14,23 @@ const isMobile = windowWidth <= 812 && true;
 export default class NumbersLine extends React.Component 
 {
     render() {
-        console.log(this.props.result);
         return (
           <View style={styles.line} >
-              <OptionDigit source ={require("../../assets/number1.png")} value ="1" result ={this.props.result} setRewardState={() => this.props.setRewardState()}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number2.png")} value ="2" result ={this.props.result} setRewardState={() => this.props.setRewardState()}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number3.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number4.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number5.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number6.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number7.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number8.png")} result ={this.props.result}></OptionDigit>
-              <OptionDigit source ={require("../../assets/number9.png")} result ={this.props.result}></OptionDigit>
+              <OptionDigit source={require("../../assets/number1.png")} value="1" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number2.png")} value="2" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number3.png")} value="3" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number4.png")} value="4" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number5.png")} value="5" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number6.png")} value="6" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number7.png")} value="7" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number8.png")} value="8" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit source={require("../../assets/number9.png")} value="9" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
          </View>
         );
       
     }}
     const styles = StyleSheet.create({
-        line:{
+        line: {
             backgroundColor:"yellow",
             position: "absolute",
             borderRadius: 20,
