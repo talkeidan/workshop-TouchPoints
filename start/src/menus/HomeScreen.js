@@ -20,15 +20,50 @@ const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
 const digits = [
-  { name: <One isNaked={true}></One>},
-  { name: <Two isNaked={true}></Two>},
-  { name: <Three isNaked={true}></Three>},
-  { name: <Four isNaked={true}></Four>},
-  { name: <Five isNaked={true}></Five>},
-  { name: <Six isNaked={true}></Six>},
-  { name: <Seven isNaked={true}></Seven>},
-  { name: <Eight isNaked={true}></Eight>},
-  { name: <Nine isNaked={true}></Nine>},
+  { name: <One isNaked={true}></One>, value: 1},
+  { name: <Two isNaked={true}></Two>, value: 2},
+  { name: <Three isNaked={true}></Three>, value: 3},
+  { name: <Four isNaked={true}></Four>, value: 4},
+  { name: <Five isNaked={true}></Five>, value: 5},
+  { name: <Six isNaked={true}></Six>, value: 6},
+  { name: <Seven isNaked={true}></Seven>, value: 7},
+  { name: <Eight isNaked={true}></Eight>, value: 8},
+  { name: <Nine isNaked={true}></Nine>, value: 9},
+];
+
+const pairs = [
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 3},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 4},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Four isRight={true} isAdd={true} isNaked={true}></Four>, value: 5},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Five isRight={true} isAdd={true} isNaked={true}></Five>, value: 6},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Six isRight={true} isAdd={true} isNaked={true}></Six>, value: 7},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Seven isRight={true} isAdd={true} isNaked={true}></Seven>, value: 8},
+  {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Eight isRight={true} isAdd={true} isNaked={true}></Eight>, value: 9},
+  {flag: false, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 5},
+  {flag: false, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <Four isRight={true} isAdd={true} isNaked={true}></Four>, value: 6},
+  {flag: false, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <Five isRight={true} isAdd={true} isNaked={true}></Five>, value: 7},
+  {flag: false, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <Six isRight={true} isAdd={true} isNaked={true}></Six>, value: 8},
+  {flag: false, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <Seven isRight={true} isAdd={true} isNaked={true}></Seven>, value: 9},
+  {flag: false, first: <Three isRight={false} isAdd={true} isNaked={true}></Three>, second: <Four isRight={true} isAdd={true} isNaked={true}></Four>, value: 7},
+  {flag: false, first: <Three isRight={false} isAdd={true} isNaked={true}></Three>, second: <Five isRight={true} isAdd={true} isNaked={true}></Five>, value: 8},
+  {flag: false, first: <Three isRight={false} isAdd={true} isNaked={true}></Three>, second: <Six isRight={true} isAdd={true} isNaked={true}></Six>, value: 9},//
+  {flag: false, first: <Four isRight={false} isAdd={true} isNaked={true}></Four>, second: <Five isRight={true} isAdd={true} isNaked={true}></Five>, value: 9},
+  {flag: true, first: <Two isRight={false} isAdd={true} isNaked={true}></Two>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 3},
+  {flag: true, first: <Three isRight={false} isAdd={true} isNaked={true}></Three>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 4},
+  {flag: true, first: <Four isRight={false} isAdd={true} isNaked={true}></Four>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 5},
+  {flag: true, first: <Five isRight={false} isAdd={true} isNaked={true}></Five>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 6},
+  {flag: true, first: <Six isRight={false} isAdd={true} isNaked={true}></Six>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 7},
+  {flag: true, first: <Seven isRight={false} isAdd={true} isNaked={true}></Seven>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 8},
+  {flag: true, first: <Eight isRight={false} isAdd={true} isNaked={true}></Eight>, second: <One isRight={true} isAdd={true} isNaked={true}></One>, value: 9},
+  {flag: true, first: <Three isRight={false} isAdd={true} isNaked={true}></Three>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 5},
+  {flag: true, first: <Four isRight={false} isAdd={true} isNaked={true}></Four>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 6},
+  {flag: true, first: <Five isRight={false} isAdd={true} isNaked={true}></Five>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 7},
+  {flag: true, first: <Six isRight={false} isAdd={true} isNaked={true}></Six>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 8},
+  {flag: true, first: <Seven isRight={false} isAdd={true} isNaked={true}></Seven>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 9},
+  {flag: true, first: <Four isRight={false} isAdd={true} isNaked={true}></Four>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 7},
+  {flag: true, first: <Five isRight={false} isAdd={true} isNaked={true}></Five>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 8},
+  {flag: true, first: <Six isRight={false} isAdd={true} isNaked={true}></Six>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 9},//
+  {flag: true, first: <Five isRight={false} isAdd={true} isNaked={true}></Five>, second: <Four isRight={true} isAdd={true} isNaked={true}></Four>, value: 9}
 ];
 
 const shuffleDeck = (array) => {
@@ -79,9 +114,10 @@ React.useEffect(
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits, 1)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => navigation.navigate('AddingNumbers')}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
+        navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
          <MaterialCommunityIcons name="information" style={styles.icon}/>
         </TouchableOpacity>
@@ -146,17 +182,6 @@ styles = StyleSheet.create({
   text: {
     fontSize: 30,
     textAlign: 'center'
-  },
-  list1: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: "center",
-  },
-  list2: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: "center",
-    marginBottom: "5%",
   },
   infoIcon: {
     fontSize: normalize(25),

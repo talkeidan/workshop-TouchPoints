@@ -133,11 +133,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center'
   },
-  list1: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: "center",
-  },
   bgimage: {
     position: "relative",
     flex: 1,

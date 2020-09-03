@@ -15,6 +15,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdScreen';//
 import MemoryAidScreen from './src/screens/MemoryAidScreen';
+import AddingDiffDigitsScreen from './src/screens/AddingDiffDigitsScreen';
 
 //I18nManager.allowRTL(false);
 
@@ -39,6 +40,7 @@ const Stack = createStackNavigator()
        <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} options={{title: 'לימוד ספרות'}} />
        <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} options={{title: 'זיהוי עיגולים וקווים מתוך צורות'}}/>
        <Stack.Screen name="MemoryAid" component={MemoryAidScreen} options={{title: 'תומכי זיכרון'}} />
+       <Stack.Screen name="AddingDiffDigits" component={AddingDiffDigitsScreen} options={{title: 'חיבור ספרות שונות'}} />
      </Stack.Navigator>
    );
  }

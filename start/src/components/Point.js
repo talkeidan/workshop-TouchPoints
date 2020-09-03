@@ -8,7 +8,7 @@ import normalize from "react-native-normalize";
 
 
 
-const Point = ({ unpressedStyle, pressedStyle, setRewardState, setCounter, count}) => {
+const Point = ({isAdd, unpressedStyle, pressedStyle, setRewardState, setCounter, count}) => {
     const [isPress, setIsPress] = useState(false);
     const [thisCounter, setThisCounter] = useState(count);
     const [myStyle, setStyle] = useState(unpressedStyle);
@@ -21,8 +21,9 @@ const Point = ({ unpressedStyle, pressedStyle, setRewardState, setCounter, count
         }
 
         if (count == 0) {
-            console.log('reward');
-            setRewardState();
+            if (!isAdd) {
+                setRewardState();
+            }
         }
       }, [isPress]);
 

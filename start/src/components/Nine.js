@@ -9,14 +9,14 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true; 
 
-const Nine = ({onPress, isNaked}) => {
+const Nine = ({isRight, isAdd, onPress, isNaked}) => {
   const [counter, setCounter] = useState(9);
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
       
-  return <View style={styles.mainContainer}>
-    <ImageBackground style={styles.bgimage} source={
-        isNaked ? require("../../assets/number9.png") : require("../../assets/kid9.png")} resizeMode="contain">
+  return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
+    <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
+        isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number9.png") : require("../../assets/kid9.png") : require("../../assets/number9.png") : require("../../assets/kid9.png")} resizeMode="contain">
     <Confetti rewardState={rewardState}/>
     <Point 
         unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
@@ -266,6 +266,30 @@ const styles = StyleSheet.create({
         top: "70%",
         left: "80%"
       },
+      addContainer: {
+        position: "absolute",
+        width: isMobile? "15%" : "25%",
+        aspectRatio: 1/1,
+        borderRadius: 150,
+        backgroundColor: "pink",
+        top: isMobile? "22%" : "22%",
+        left: isMobile? "52%" : "54%",
+    },
+    bgimageAdd: {
+        marginTop: "10%",
+        height: "85%",
+        width: "100%",
+        shadowColor: "#36393d",
+    },
+    addContainerLeft: {
+      position: "absolute",
+      width: isMobile? "15%" : "25%",
+      aspectRatio: 1/1,
+      borderRadius: 150,
+      backgroundColor: "pink",
+      top: isMobile? "22%" : "22%",
+      left: isMobile? "32%" : "21%",
+  }
 });
 
 export default Nine;
