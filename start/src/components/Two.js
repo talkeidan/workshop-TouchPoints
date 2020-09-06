@@ -17,7 +17,7 @@ const Two = ({isRight, isAdd, onPress, isNaked}) => {
 
     //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
-            isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number2.png") : require("../../assets/kid2.png") : require("../../assets/number2.png") : require("../../assets/kid2.png")} resizeMode="contain">
+        isNaked ? rewardState == 'reward' ? require("../../assets/kid2.png") : require("../../assets/number2.png") : isAdd ? require("../../assets/number2.png") : rewardState == 'reward' ? require("../../assets/kid2.png") : require("../../assets/kid-point2.png")} resizeMode="contain">
         <Confetti rewardState={rewardState}/>
         <Point 
             unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
@@ -80,37 +80,37 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "black",
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '6%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: '21.2%',
+        top: '12.3%',
+        height: "16%",
+        aspectRatio: 1/1
       },
       button2: {
         position: "absolute",
         backgroundColor: "black",
         borderRadius: normalize(35),
-        left: isMobile ? '27%' : '13%',
-        top: isMobile ? '70%' : '70%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: '21%',
+        top: isMobile? "61.7%" : '61%',
+        height: "16%",
+        aspectRatio: 1/1
       },
       transButton1: {
         position: "absolute",
         backgroundColor: "yellow",
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '6%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: '21.2%',
+        top: '12.3%',
+        height: "16%",
+        aspectRatio: 1/1
       },
       transButton2: {
         position: "absolute",
         backgroundColor: "yellow",
         borderRadius: normalize(35),
-        left: isMobile ? '27%' : '13%',
-        top: isMobile ? '70%' : '70%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: '21%',
+        top: isMobile? "58%" : '61%',
+        height: "16%",
+        aspectRatio: 1/1
       },
       addContainer: {
         position: "absolute",

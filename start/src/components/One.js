@@ -14,11 +14,9 @@ const One = ({isRight, isAdd, onPress, isNaked}) => {
     const [counter, setCounter] = useState(1);
     const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
-    
 
-    //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
-            isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number1.png") : require("../../assets/kid1.png") : require("../../assets/number1.png") : require("../../assets/kid-point1.png")} resizeMode="contain">
+            isNaked ? rewardState == 'reward' ? require("../../assets/kid1.png") : require("../../assets/number1.png") : isAdd ? require("../../assets/number1.png") : rewardState == 'reward' ? require("../../assets/kid1.png") : require("../../assets/kid-point1.png")} resizeMode="contain">
             <Confetti rewardState={rewardState}/>
             <Point 
             unpressedStyle={isNaked? styles.transButton : styles.button} 
@@ -28,7 +26,6 @@ const One = ({isRight, isAdd, onPress, isNaked}) => {
             setRewardState={(rewardState) => setRewardState('reward')} 
             count={counter}/>
         </ImageBackground>
- //   </View>
 }
 
 const styles = StyleSheet.create({
@@ -41,24 +38,24 @@ const styles = StyleSheet.create({
     mainContainer: {
         width: windowWidth,
         height: windowHeight,
-        //display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
     },
       bgimage:{
         flex: 1,
-          position: "relative",
-          marginTop: "2%",
-          borderRadius: 20,
-          height: hp('85%'),
-          width: isMobile? wp('55%') : wp('90%'),
-          shadowColor: "#36393d",
-          shadowOffset: { width: 1 },
-          shadowRadius: 5,
-          shadowOpacity: 1,
-          direction: 'ltr',
-        alignSelf: "center"
+        position: "relative",
+        marginTop: "2%",
+        borderRadius: 20,
+        height: hp('85%'),
+        width: isMobile? wp('55%') : wp('90%'),
+        shadowColor: "#36393d",
+        shadowOffset: { width: 1 },
+        shadowRadius: 5,
+        shadowOpacity: 1,
+        direction: 'ltr',
+        alignSelf: "center",
+        right: "5%"
       },
     button: {
         position: "absolute",
@@ -66,8 +63,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '13%',
         borderRadius: normalize(35),
-        left: isMobile? '60%' : '65%',
-        top: isMobile? '8%' : '8%'
+        left: isMobile? '57%' : '57%',
+        top: isMobile? '5%' : '5%'
 
       },
       transButton: {
@@ -77,8 +74,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '13%',
         borderRadius: normalize(35),
-        left: isMobile? '60%' : '65%',
-        top: isMobile? '8%' : '8%'
+        left: isMobile? '57%' : '57%',
+        top: isMobile? '5%' : '5%'
       },
       wrong: {
         position: "absolute",
@@ -108,6 +105,7 @@ const styles = StyleSheet.create({
         left: isMobile? "52%" : "54%",
     },
     bgimageAdd: {
+        right: "10%",
         marginTop: "10%",
         height: "85%",
         width: "100%",
