@@ -15,7 +15,7 @@ const OneTwins = ({onPress, isNaked}) => {
     const [counter, setCounter] = useState(10);
     const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
-    console.log(rewardState);
+    //console.log(rewardState);
 
     return <View style={styles.mainContainer}>
         <Confetti rewardState={rewardState}/>

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { I18nManager, StyleSheet, TouchableOpacity} from 'react-native';
 import { Video, Audio } from 'expo-av';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import * as ScreenOrientation from 'expo-screen-orientation';
 import HomeScreen from "./src/menus/HomeScreen";
 import IntroScreen from './src/menus/IntroScreen';
 import LearningDigitsMenuScreen from './src/menus/LearningDigitsMenuScreen';
@@ -44,14 +47,91 @@ const Stack = createStackNavigator()
      </Stack.Navigator>
    );
  }
+
+ export default class App extends React.Component {
+  state = {
+    isReady: false,
+  };
+  componentDidMount() {
+    this.changeScreenOrientation;
+  }
+  render() {
+    if (!this.state.isReady) {
+      return (
+        <AppLoading
+          startAsync={this._cacheResourcesAsync}
+          onFinish={() => this.setState({ isReady: true })}
+          onError={console.warn}
+        />
+      ); }
+
+      return (
+        <NavigationContainer>
+          <MyStack />
+        </NavigationContainer>
+      );
+  }
+
+  async changeScreenOrientation() {
+    await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
+  }
+
+  async _cacheResourcesAsync() {
+    const images = [require('./assets/playground.jpg'),
+     require('./assets/kid9.png'),
+     require('./assets/kid4.png'),
+     require('./assets/home-music.mp3'),
+     require('./assets/kid8.png'),
+     require('./assets/kid7.png'), 
+     require('./assets/kid6.png'), 
+     require('./assets/kid5.png'), 
+     require('./assets/kid1.png'), 
+     require('./assets/alice.jpg'), 
+     require('./assets/kid2.png'), 
+     require('./assets/kid3.png'), 
+     require('./assets/number1.png'),
+     require('./assets/number2.png'),
+     require('./assets/number3.png'),
+     require('./assets/number4.png'),
+     require('./assets/number5.png'),
+     require('./assets/number6.png')];
+
+    const cacheImages = images.map(image => {
+      return Asset.fromModule(image).downloadAsync();
+    }); 
+    return Promise.all(cacheImages);
+  }
+}
  
- export default function App() {
-   return (
-     <NavigationContainer>
-       <MyStack />
-     </NavigationContainer>
-   );
- }
+//  export default function App() {
+//   const [isReady, setIsReady] = React.useState(false);
+
+//   async function _cacheResourcesAsync() {
+//     const images = [require('./icon2.png')];
+
+//     const cacheImages = images.map(image => {
+//       return Asset.fromModule(image).downloadAsync();
+//     }); 
+//     return Promise.all(cacheImages);
+//   }
+// }
+//   if (!isReady) {
+//     return (
+//       <AppLoading
+//         startAsync={_cacheResourcesAsync()}
+//         onFinish={() => setIsReady(true)}
+//         onError={console.warn}
+//       />
+//     ); }
+//    return (
+//      <NavigationContainer>
+//        <MyStack />
+//      </NavigationContainer>
+//    );
+
+
+   
+//  }
  
 
 // import { createAppContainer } from 'react-navigation';

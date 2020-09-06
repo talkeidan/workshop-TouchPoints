@@ -17,7 +17,7 @@ const AddingDiffDigitsScreen = ({navigation, route}) => {
     const [counter, setCounter] = useState(0);
     const [rewardState, setRewardState] = useState('rest');
     const [isDisabled, setIsDisabled] = useState(false);
-    console.log(route.params.arr[0].value);
+    //console.log(route.params.arr[0].value);
 
     return <View style={styles.mainContainer}> 
     <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 
