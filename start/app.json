@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "start",
+    "name": "TouchPoints",
     "slug": "start",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/loading5.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -14,10 +14,11 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "requireFullScreen": true,
+      "bundleIdentifier": "com.talkeidan.start"
     },
     "web": {
       "favicon": "./assets/favicon.png"
