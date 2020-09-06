@@ -18,7 +18,7 @@ const One = ({isRight, isAdd, onPress, isNaked}) => {
 
     //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
-            isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number1.png") : require("../../assets/kid1.png") : require("../../assets/number1.png") : require("../../assets/kid1.png")} resizeMode="contain">
+            isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number1.png") : require("../../assets/kid1.png") : require("../../assets/number1.png") : require("../../assets/kid-point1.png")} resizeMode="contain">
             <Confetti rewardState={rewardState}/>
             <Point 
             unpressedStyle={isNaked? styles.transButton : styles.button} 
