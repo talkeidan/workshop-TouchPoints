@@ -19,8 +19,6 @@ const CirclesShapesId = () => {
            <ImageBackground style={styles.bgimagecroc} source={require("../../../assets/croc-left.png")} resizeMode="contain" >
            <LineHorizontal style={styles.LineHorizontal1} count={null} setCounter={() =>{null}} setRewardState={null} flag = {false}/>
            </ImageBackground>
-
-           
             </View>
 }
 
