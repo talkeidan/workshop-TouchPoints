@@ -18,7 +18,7 @@ const AddingNumbersScreen = ({navigation, route}) => {
     <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
     <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => {
       route.params.pause()
-      navigation.navigate('CirclesLinesId', {arr: route.params.arr})}}/>
+      navigation.navigate('BigSmallDigit', {arr: route.params.arr})}}/>
     <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => {
       route.params.pause()
       navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}}/>
