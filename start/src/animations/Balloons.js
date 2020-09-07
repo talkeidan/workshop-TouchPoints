@@ -1,9 +1,6 @@
 import React from "react";
 import { Dimensions, View } from "react-native";
 import LottieView from 'lottie-react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-
-
 
 export default class Balloons extends React.Component {
     
@@ -17,7 +14,6 @@ export default class Balloons extends React.Component {
       return (
         <View
         style={{
-          // backgroundColor: 'red',
           position: 'absolute',
           height: screenHeight,
           width: screenWidth,
@@ -29,11 +25,9 @@ export default class Balloons extends React.Component {
             this.animation = animation;
           }}
           source={require('../../assets/sky-balloons.json')}
-         // duration={3000} 
           loop={true} 
           autoPlay={true} 
           resizeMode="cover"
-          //style={{width: screenWidth, height: screenHeight}}
         />
         </View>
       );

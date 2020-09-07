@@ -14,7 +14,6 @@ const Four = ({isRight, isAdd, onPress, isNaked}) => {
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
      
-  //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
      return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
       isNaked ? rewardState == 'reward' ? require("../../assets/kid4.png") : require("../../assets/number4.png") : isAdd ? require("../../assets/number4.png") : rewardState == 'reward' ? require("../../assets/kid4.png") : require("../../assets/kid-point4.png")} resizeMode="contain">
         <Confetti rewardState={rewardState}/>
@@ -47,7 +46,6 @@ const Four = ({isRight, isAdd, onPress, isNaked}) => {
             setRewardState={(rewardState) => setRewardState('reward')} 
             count={counter}/>
         </ImageBackground>
- //   </View>
 }
 
 const styles = StyleSheet.create({

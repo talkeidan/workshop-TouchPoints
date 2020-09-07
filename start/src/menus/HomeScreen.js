@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Dimensions} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import { Video, Audio } from 'expo-av';
 import One from "../components/One";

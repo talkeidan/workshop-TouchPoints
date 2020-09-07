@@ -1,13 +1,7 @@
 import React, {useState} from "react";
-import { TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
+import { Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import RewardsComponent from 'react-native-rewards';
-import normalize from "react-native-normalize";
-import { render } from "react-dom";
-import { color } from "react-native-reanimated";
 import LineHorizontal from "./LineHorizontal";
-import LineVertical from "./LineVertical";
-import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
 
 
@@ -37,8 +31,6 @@ const styles = StyleSheet.create({
 },
 bgimageface:{
     position: "relative",
-    //alignSelf: "center",
-   // justifyContent: "center",
     marginTop: "6%",
     padding: "5%",
     borderRadius: 20,
@@ -52,12 +44,9 @@ bgimageface:{
     elevation: 20,
     shadowRadius: 5,
     shadowOpacity: 1,
-
 },
 bgimagecroc:{
     position: "relative",
-    //alignSelf: "center",
-   // justifyContent: "center",
     marginTop: "6%",
     padding: "5%",
     borderRadius: 20,
@@ -71,33 +60,20 @@ bgimagecroc:{
     elevation: 20,
     shadowRadius: 5,
     shadowOpacity: 1,
-
 },
     LineHorizontal1: {
         position: "absolute",
-        //backgroundColor: "black",
-        //aspectRatio: 1 /1,
-        //width:50,
         height:100,
-      //  borderRadius: normalize(2000),
         top: 85,
         left: 70
-
       },
-     
       Circle1: {
         position: "absolute",
-        //backgroundColor: "black",
-        //aspectRatio: 1 /1,
-        //width:50,
         height: 90,
         width: 90,
-      //  borderRadius: normalize(2000),
         top: 15,
         left: 130
       },
-
-
 });
 
 export default CirclesShapesId;

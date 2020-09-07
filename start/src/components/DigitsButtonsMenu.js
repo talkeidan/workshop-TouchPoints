@@ -11,10 +11,8 @@ const DigitsButtonsMenu = ({title, navigation, digit}) => {
 const styles = StyleSheet.create({
     image:{
         aspectRatio: 1 / 1,
-        //width: 100,
         height: '45%',
         borderRadius: 20,
-        //alignSelf: "center"
     },
     text: {
         justifyContent: "center",

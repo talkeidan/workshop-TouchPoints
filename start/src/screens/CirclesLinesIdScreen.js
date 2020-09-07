@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Dimensions, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
-import ButtonsMenu from "../components/HomeButton"
-import { Col, Row, Grid } from "react-native-easy-grid";
-import normalize from "react-native-normalize";
+import { Dimensions, StyleSheet, View, ImageBackground, Image} from "react-native";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import CirclesId from "../components/intro/CirclesId";

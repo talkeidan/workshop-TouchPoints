@@ -1,17 +1,13 @@
-import React, {useRef, useState, useEffect} from "react";
-import { Dimensions, StyleSheet, View,TouchableOpacity, ImageBackground} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { Col, Row, Grid } from "react-native-easy-grid";
+import React, {useState, useEffect} from "react";
+import { Dimensions, StyleSheet,  ImageBackground} from "react-native";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
 const DigitsIdScreen = ({navigation, route}) => {
-    //const [stage, setStage] = useState(route.params.arr[0]);
     const [counter, setCounter] = useState(0);
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
@@ -24,7 +20,6 @@ const DigitsIdScreen = ({navigation, route}) => {
               }
               else
               {
-                  //setStage(route.params.arr[counter + 1]);
                   setCounter(counter + 1)
             }}}/>
         </ImageBackground>

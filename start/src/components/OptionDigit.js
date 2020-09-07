@@ -1,10 +1,6 @@
 import React, {useState} from "react";
 import {View,  Image, StyleSheet, TouchableOpacity, Dimensions} from "react-native";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import normalize from "react-native-normalize";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import * as Animatable from 'react-native-animatable';
-import Confetti from "../animations/Confetti";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

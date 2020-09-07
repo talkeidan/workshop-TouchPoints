@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { Text, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
-import ButtonsMenu from "../components/HomeButton"
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
-import shuffleDeck from "../menus/HomeScreen";
 import NextButton from "../components/NextButton";
-import OneTwins from "../components/twins/OneTwins";
 import Confetti from "../animations/Confetti";
 import AddingPair from "../components/AddingPair";
 
@@ -17,7 +13,6 @@ const AddingDiffDigitsScreen = ({navigation, route}) => {
     const [counter, setCounter] = useState(0);
     const [rewardState, setRewardState] = useState('rest');
     const [isDisabled, setIsDisabled] = useState(false);
-    //console.log(route.params.arr[0].value);
 
     return <View style={styles.mainContainer}> 
     <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 

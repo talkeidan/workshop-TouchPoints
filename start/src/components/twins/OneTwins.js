@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useRef} from "react";
-import { TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
+import React, {useState} from "react";
+import { Text, StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import normalize from "react-native-normalize";
 import Point from "../Point";
-import * as Animatable from 'react-native-animatable';
 import Confetti from "../../animations/Confetti";
 import NumbersLine from "../NumbersLine";
 
@@ -53,20 +52,20 @@ const styles = StyleSheet.create({
         flex: 1,
         position:'relative',
     },
-      bgimage:{
-          flex: 1,
-          position: "absolute",
-          marginTop: "2%",
-          borderRadius: 20,
-          height: hp('20%'),
-          width: isMobile? wp('40%') : wp('90%'),
-          top: isMobile? wp('15%') : wp('90%'),
-          left: isMobile? wp('17%') : wp('90%'),
-          shadowColor: "#36393d",
-          shadowOffset: { width: 1 },
-          shadowRadius: 5,
-          shadowOpacity: 1,
-          direction: 'ltr',
+    bgimage: {
+        flex: 1,
+        position: "absolute",
+        marginTop: "2%",
+        borderRadius: 20,
+        height: hp('20%'),
+        width: isMobile? wp('40%') : wp('90%'),
+        top: isMobile? wp('15%') : wp('90%'),
+        left: isMobile? wp('17%') : wp('90%'),
+        shadowColor: "#36393d",
+        shadowOffset: { width: 1 },
+        shadowRadius: 5,
+        shadowOpacity: 1,
+        direction: 'ltr',
       },
     button: {
         position: "absolute",
@@ -78,20 +77,20 @@ const styles = StyleSheet.create({
         top: isMobile? '0%': '8%'
 
       },
-      bgimage2:{
+    bgimage2: {
         flex: 1,
-          position: "absolute",
-          marginTop: "2%",
-          borderRadius: 20,
-          height: hp('20%'),
-          width: isMobile? wp('40%') : wp('90%'),
-          top: isMobile? wp('15%') : wp('90%'),
-          left: isMobile? wp('37%') : wp('90%'),
-          shadowColor: "#36393d",
-          shadowOffset: { width: 1 },
-          shadowRadius: 5,
-          shadowOpacity: 1,
-          direction: 'ltr',
+        position: "absolute",
+        marginTop: "2%",
+        borderRadius: 20,
+        height: hp('20%'),
+        width: isMobile? wp('40%') : wp('90%'),
+        top: isMobile? wp('15%') : wp('90%'),
+        left: isMobile? wp('37%') : wp('90%'),
+        shadowColor: "#36393d",
+        shadowOffset: { width: 1 },
+        shadowRadius: 5,
+        shadowOpacity: 1,
+        direction: 'ltr',
       },
     button2: {
         position: "absolute",
@@ -101,24 +100,20 @@ const styles = StyleSheet.create({
         borderRadius: normalize(35),
         left: isMobile? "55%" : '70%',
         top: isMobile? '0%': '8%'
-
       },
-      Text1: {
+    Text1: {
         fontSize:isMobile? 60: 50,
         color: "black", 
         fontWeight: 'bold',
         left: isMobile? "0%" : '70%',
         top: isMobile? '8%': '8%'
-
-
       },
-      Text2: {
+    Text2: {
         fontSize:isMobile? 60: 50,
         color: "black", 
         fontWeight: 'bold',
         left: isMobile? "0%" : '70%',
         top: isMobile? '0%': '8%'
-
       },
 });
 

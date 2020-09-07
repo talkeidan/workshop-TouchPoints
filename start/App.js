@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { I18nManager, StyleSheet, TouchableOpacity} from 'react-native';
-import { Video, Audio } from 'expo-av';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as ScreenOrientation from 'expo-screen-orientation';
@@ -19,8 +17,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdScreen';//
 import MemoryAidScreen from './src/screens/MemoryAidScreen';
 import AddingDiffDigitsScreen from './src/screens/AddingDiffDigitsScreen';
-
-//I18nManager.allowRTL(false);
 
 YellowBox.ignoreWarnings([
   'Animated: `useNativeDriver` was not specified.', 'Non-serializable values were found in the navigation state.', 'Failed prop type: Invalid prop `fontSize` of type `string` supplied to `Text`, expected `number`.'

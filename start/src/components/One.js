@@ -1,9 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
-import { TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
+import { StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import normalize from "react-native-normalize";
 import Point from "./Point";
-import * as Animatable from 'react-native-animatable';
 import Confetti from "../animations/Confetti";
 
 const windowWidth = Dimensions.get('window').width;

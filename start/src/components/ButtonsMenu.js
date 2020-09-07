@@ -1,6 +1,5 @@
 import React from "react";
 import { Dimensions, Text, StyleSheet, View, Image, TouchableOpacity} from "react-native";
-import normalize from "react-native-normalize";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
