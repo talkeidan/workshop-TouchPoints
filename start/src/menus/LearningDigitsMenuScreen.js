@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, ScrollView, Dimensions, StyleSheet, View, Image, TouchableOpacity} from "react-native";
+import ButtonsMenu from "../components/ButtonsMenu"
 import BackButton from "../components/BackButton"
 import Balloons from "../animations/Balloons";
 const windowWidth = Dimensions.get('window').width;

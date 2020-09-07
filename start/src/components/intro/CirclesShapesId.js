@@ -3,6 +3,7 @@ import { Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacit
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import LineHorizontal from "./LineHorizontal";
 import Confetti from "../../animations/Confetti";
+import Circle from "./Circle";
 
 
 const CirclesShapesId = () => {
