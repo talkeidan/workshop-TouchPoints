@@ -10,8 +10,7 @@ export default class OptionDigit extends React.Component
 {
     handleViewRef = ref => this.view = ref;
     
-    shake = () =>
-     {
+    shake = () => {
          if (this.props.result == this.props.value) {
              this.props.setRewardState();
          }
@@ -22,10 +21,29 @@ export default class OptionDigit extends React.Component
       
     render() {
         return (
-          <Animatable.View style={{zIndex: 1, borderWidth: 2, height: "100%", width: "11.1%"}} ref={this.handleViewRef}>
-         <TouchableOpacity style={{height: "100%", width: "100%", zIndex: 1}} onPress={this.shake} >
-         <Image style={{ height: "100%", width: "100%", zIndex: 1}} resizeMode="contain" source={this.props.source}/>
+          <Animatable.View style={styles.container} ref={this.handleViewRef}>
+         <TouchableOpacity style={styles.button} onPress={this.shake} >
+         <Image style={this.props.style} resizeMode="contain" source={this.props.source}/>
          </TouchableOpacity>
          </Animatable.View>
         );
     }}
+
+    const styles = StyleSheet.create({
+        container: {
+            zIndex: 1, 
+            borderWidth: 2, 
+            height: "100%", 
+            width: "11.1%"
+        },
+        button: {
+            height: "100%", 
+            width: "100%", 
+            zIndex: 1
+        },
+        image: {
+            height: "100%", 
+            width: "100%", 
+            zIndex: 1
+        }
+    });
