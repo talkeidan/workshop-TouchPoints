@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Dimensions } from "react-native";
 import LottieView from 'lottie-react-native';
 
@@ -22,6 +22,7 @@ export default class Confetti extends React.Component {
           duration={3000} 
           loop={false} 
           autoPlay={false} 
+          style={{marginTop: "5%", zIndex: this.props.rewardState == 'reward'? 1 : 0}}
         />
       );
     }
