@@ -17,7 +17,7 @@ import MemoryAidScreen from './src/screens/MemoryAidScreen';
 import AddingDiffDigitsScreen from './src/screens/AddingDiffDigitsScreen';
 import BigSmallDigitScreen from './src/screens/BigSmallDigitScreen';
 
-//I18nManager.allowRTL(false);
+I18nManager.allowRTL(false);
 
 YellowBox.ignoreWarnings([
   'Animated: `useNativeDriver` was not specified.', 'Non-serializable values were found in the navigation state.', 'Failed prop type: Invalid prop `fontSize` of type `string` supplied to `Text`, expected `number`.'
