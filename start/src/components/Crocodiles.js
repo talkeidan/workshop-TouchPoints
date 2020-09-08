@@ -30,7 +30,7 @@ const Crocodiles = ({isLeftBigger, setReward, reward}) => {
 
     if (reward == 'rest') {
         return <View style={{height: "100%", width: "100%"}}>
-        <View style={{alignSelf: "center", marginTop: "18%", height: "30%", width: "40%", borderWidth: 1}}/>
+        <View style={{alignSelf: "center", marginTop: "15%", height: "35%", width: "40%", borderWidth: 1}}/>
     <Draggable shouldReverse={true} x={windowWidth * 0.6} y={windowHeight * 0.58} onDragRelease={(event, gestureState) => {
         if (gestureState.moveX >= (windowWidth * 0.22) && gestureState.moveX <= (windowWidth * 0.65) && gestureState.moveY >= (windowHeight * 0.34) && gestureState.moveY <= (windowHeight * 0.54) && isLeftBigger) {
             setReward();
@@ -54,7 +54,7 @@ const Crocodiles = ({isLeftBigger, setReward, reward}) => {
 
     if (isLeftComplete || isRightComplete) {
         return <View style={{height: "100%", width: "100%"}}>
-        <View style={{alignSelf: "center", marginTop: "18%", borderWidth: 1, height: "30%", width: "40%"}}>
+        <View style={{alignSelf: "center", marginTop: "15%", borderWidth: 1, height: "35%", width: "40%"}}>
         <Image resizeMode="contain" style={styles.imageAfter} source={imageSource}/>
             </View>
     </View>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1/1,
         height: isMobile? 220 : 400,
         alignSelf: "center",
-        bottom: isMobile? "50%" : "40%"
+        bottom: isMobile? "40%" : "30%"
     }
 });
 
