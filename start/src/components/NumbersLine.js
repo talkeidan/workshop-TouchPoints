@@ -16,15 +16,15 @@ export default class NumbersLine extends React.Component
     render() {
         return (
           <View style={styles.line} >
-              <OptionDigit source={require("../../assets/number1.png")} value="1" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number2.png")} value="2" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number3.png")} value="3" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number4.png")} value="4" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number5.png")} value="5" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number6.png")} value="6" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number7.png")} value="7" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number8.png")} value="8" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit source={require("../../assets/number9.png")} value="9" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '0%' source={require("../../assets/number1.png")} value="1" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '10%' source={require("../../assets/number2.png")} value="2" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '20%' source={require("../../assets/number3.png")} value="3" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '30%' source={require("../../assets/number4.png")} value="4" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '40%' source={require("../../assets/number5.png")} value="5" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '50%' source={require("../../assets/number6.png")} value="6" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '60%' source={require("../../assets/number7.png")} value="7" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '70%' source={require("../../assets/number8.png")} value="8" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit left = '80%' source={require("../../assets/number9.png")} value="9" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
          </View>
         );
       
@@ -37,8 +37,10 @@ export default class NumbersLine extends React.Component
             height: "20%",
             justifyContent: "center",
             width: isMobile? "100%" : "100%",
-            top: "102%",
-            flexDirection: "row",
+            top: isMobile? wp('35%') : wp('90%'),//added
+            left: isMobile? wp('5%') : wp('90%'),//added
+            //top: "102%",
+           //flexDirection: "row",
          },
           number: {
               height: "100%",

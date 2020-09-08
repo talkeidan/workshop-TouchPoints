@@ -26,7 +26,7 @@ export default class OptionDigit extends React.Component
       
     render() {
         return (
-          <Animatable.View style={{zIndex: 1, borderWidth: 2, height: "100%", width: "11.1%"}} ref={this.handleViewRef}>
+          <Animatable.View style={{position:"absolute" , zIndex: 1, borderWidth: 2, left:this.props.left, height: "100%", width: "10%"}} ref={this.handleViewRef}>
          <TouchableOpacity style={{height: "100%", width: "100%", zIndex: 1}} onPress={this.shake} >
          <Image style={{ height: "100%", width: "100%", zIndex: 1}} resizeMode="contain" source={this.props.source}/>
          </TouchableOpacity>
