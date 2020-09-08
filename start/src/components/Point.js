@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Text, Dimensions, View, Image, TouchableOpacity} from "react-native";
-
+import {TouchableOpacity} from "react-native";
 
 const Point = ({isAdd, unpressedStyle, pressedStyle, setRewardState, setCounter, count}) => {
     const [isPress, setIsPress] = useState(false);

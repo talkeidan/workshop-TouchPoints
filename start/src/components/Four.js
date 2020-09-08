@@ -14,9 +14,8 @@ const Four = ({isRight, isAdd, onPress, isNaked}) => {
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
      
-  //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
      return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
-              isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number4.png") : require("../../assets/kid4.png") : require("../../assets/number4.png") : require("../../assets/kid4.png")} resizeMode="contain">
+      isNaked ? rewardState == 'reward' ? require("../../assets/kid4.png") : require("../../assets/number4.png") : isAdd ? require("../../assets/number4.png") : rewardState == 'reward' ? require("../../assets/kid4.png") : require("../../assets/kid-point4.png")} resizeMode="contain">
         <Confetti rewardState={rewardState}/>
         <Point 
             unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
@@ -47,7 +46,6 @@ const Four = ({isRight, isAdd, onPress, isNaked}) => {
             setRewardState={(rewardState) => setRewardState('reward')} 
             count={counter}/>
         </ImageBackground>
- //   </View>
 }
 
 const styles = StyleSheet.create({
@@ -80,47 +78,39 @@ const styles = StyleSheet.create({
     },
     button1: {
         position: "absolute",
-        backgroundColor: "#331a00",
+        backgroundColor: "black",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '6%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '25%' : '25%',
+        top: isMobile ? "24%" : '24%',
       },
       button2: {
         position: "absolute",
-        backgroundColor: "#331a00",
+        backgroundColor: "black",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '20%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '44%' : '44%',
+        top: isMobile ? "24%" : '24%',
       }, 
       button3: {
         position: "absolute",
-        backgroundColor: "#331a00",
+        backgroundColor: "black",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '30%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '60%' : '60%',
+        top: isMobile ? "24%" : '24%',
       },
       button4: {
         position: "absolute",
-        backgroundColor: "#331a00",
+        backgroundColor: "black",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '40%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '60%' : '60%',
+        top: isMobile ? "70%" : '70%',
       },
       transButton1: {
         position: "absolute",
@@ -128,10 +118,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '6%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '25%' : '25%',
+        top: isMobile ? "24%" : '24%',
       },
       transButton2: {
         position: "absolute",
@@ -139,10 +127,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '20%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '44%' : '44%',
+        top: isMobile ? "24%" : '24%',
       }, 
       transButton3: {
         position: "absolute",
@@ -150,10 +136,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '30%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '60%' : '60%',
+        top: isMobile ? "24%" : '24%',
       },
       transButton4: {
         position: "absolute",
@@ -161,10 +145,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: isMobile ? '24%' : '40%',
-        top: isMobile ? "18%" : '18%',
-        width: isMobile ? 40 : 75,
-        height: isMobile ? 40 : 75,
+        left: isMobile ? '60%' : '60%',
+        top: isMobile ? "70%" : '70%',
       },
       addContainer: {
         position: "absolute",

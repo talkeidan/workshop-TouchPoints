@@ -14,7 +14,6 @@ const Six = ({isRight, isAdd, onPress, isNaked}) => {
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
       
-  //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
    return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
           isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number6.png") : require("../../assets/kid6.png") : require("../../assets/number6.png") : require("../../assets/kid6.png")} resizeMode="contain">
     <Confetti rewardState={rewardState}/>
@@ -61,7 +60,6 @@ const Six = ({isRight, isAdd, onPress, isNaked}) => {
         setRewardState={(rewardState) => setRewardState('reward')} 
         count={counter}/>
     </ImageBackground>
-//  </View>
 }
 
 const styles = StyleSheet.create({
@@ -74,24 +72,10 @@ const styles = StyleSheet.create({
     mainContainer: {
       width: windowWidth,
       height: windowHeight,
-      //display: 'flex',
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
     },
-    // bgimage:{
-    //   flex: 1,
-    //   position: "relative",
-    //     marginTop: "2%",
-    //     borderRadius: 20,
-    //     height: hp('88%'),
-    //     width: isMobile? wp('55%') : wp('90%'),
-    //     shadowColor: "#36393d",
-    //     shadowOffset: { width: 1 },
-    //     shadowRadius: 5,
-    //     shadowOpacity: 1,
-    //     direction: 'ltr',
-    // },
     bgimage:{
       flex: 1,
       position: "relative",
