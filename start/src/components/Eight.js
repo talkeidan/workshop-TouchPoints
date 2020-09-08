@@ -14,7 +14,6 @@ const Eight = ({isRight, isAdd, onPress, isNaked}) => {
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
       
-  //return <View style={isAdd? isRight? styles.addContainerLeft  : styles.addContainer : styles.mainContainer}>
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
         isNaked ? rewardState == 'reward' ? isAdd ? require("../../assets/number8.png") : require("../../assets/kid8.png") : require("../../assets/number8.png") : require("../../assets/kid8.png")} resizeMode="contain">
     <Confetti rewardState={rewardState}/>

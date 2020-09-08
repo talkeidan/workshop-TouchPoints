@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import { Dimensions, StyleSheet, View, Image} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
-import { Entypo } from "@expo/vector-icons";
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import Balloons from "../animations/Balloons";
 import BackButton from "../components/BackButton"

@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Dimensions} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
 import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import { Video, Audio } from 'expo-av';
 import One from "../components/One";
@@ -107,14 +106,14 @@ React.useEffect(
        () => navigation.addListener('blur', () => setIsPlay(false)),
        []
      );
-     return <View style={{height: '100%', width: '100%'}}>
+     return <View style={{direction: "ltr", height: '100%', width: '100%'}}>
     {music}
   <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits, 1)})}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>

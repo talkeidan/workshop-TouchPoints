@@ -24,7 +24,9 @@ const AddingNumbersScreen = ({navigation, route}) => {
 
   return <View style={{height: '100%', width: '100%'}}>
     <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => navigation.navigate('CirclesLinesId', {arr: route.params.arr})}/>
+    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => {
+      route.params.pause()
+      navigation.navigate('BigSmallDigit', {arr: route.params.arr})}}/>
     <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}/>
   <Balloons style={styles.bgimage}/>
   <BackButton onPress={() => navigation.goBack()}/>

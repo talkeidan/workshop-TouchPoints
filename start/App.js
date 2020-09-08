@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { I18nManager, StyleSheet, TouchableOpacity} from 'react-native';
-import { Video, Audio } from 'expo-av';
 import HomeScreen from "./src/menus/HomeScreen";
 import IntroScreen from './src/menus/IntroScreen';
 import LearningDigitsMenuScreen from './src/menus/LearningDigitsMenuScreen';
@@ -16,8 +15,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdScreen';//
 import MemoryAidScreen from './src/screens/MemoryAidScreen';
 import AddingDiffDigitsScreen from './src/screens/AddingDiffDigitsScreen';
+import BigSmallDigitScreen from './src/screens/BigSmallDigitScreen';
 
-//I18nManager.allowRTL(false);
+I18nManager.allowRTL(false);
 
 YellowBox.ignoreWarnings([
   'Animated: `useNativeDriver` was not specified.', 'Non-serializable values were found in the navigation state.', 'Failed prop type: Invalid prop `fontSize` of type `string` supplied to `Text`, expected `number`.'
@@ -40,6 +40,7 @@ const Stack = createStackNavigator()
        <Stack.Screen name="LearningDigits" component={LearningDigitsScreen} options={{title: 'לימוד ספרות'}} />
        <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} options={{title: 'זיהוי עיגולים וקווים מתוך צורות'}}/>
        <Stack.Screen name="MemoryAid" component={MemoryAidScreen} options={{title: 'תומכי זיכרון'}} />
+       <Stack.Screen name="BigSmallDigit" component={BigSmallDigitScreen} options={{title: 'גדול קטן'}} />
        <Stack.Screen name="AddingDiffDigits" component={AddingDiffDigitsScreen} options={{title: 'חיבור ספרות שונות'}} />
      </Stack.Navigator>
    );
