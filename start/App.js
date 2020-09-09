@@ -4,7 +4,7 @@ import HomeScreen from "./src/menus/HomeScreen";
 import IntroScreen from './src/menus/IntroScreen';
 import LearningDigitsMenuScreen from './src/menus/LearningDigitsMenuScreen';
 import DigitsIdScreen from './src/screens/DigitsIdScreen';
-import AddingTwinsScreen from './src/menus/AddingTwinsScreen';
+import AddingTwinsScreen from './src/screens/AddingTwinsScreen';
 import AddingNumbersScreen from './src/menus/AddingNumbersScreen';
 import AppInfoScreen from './src/menus/AppInfoScreen';
 import CirclesLinesIdScreen from './src/screens/CirclesLinesIdScreen';

@@ -12,11 +12,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const AddingNumbersScreen = ({navigation, route}) => {
 
-  // React.useEffect(
-  //   () => navigation.addListener('blur', () => route.params.pause()),
-  //   []
-  // );
-
   React.useEffect(
     () => navigation.addListener('focus', () => route.params.play()),
     []

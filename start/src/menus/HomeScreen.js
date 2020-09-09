@@ -30,6 +30,13 @@ const digits = [
   { name: <Nine isNaked={true}></Nine>, value: 9},
 ];
 
+const twins = [
+  {digit: <One isAdd={true} isNaked={true}/>, value: 2},
+  {digit: <Two isAdd={true} isNaked={true}/>, value: 4},
+  {digit: <Three isAdd={true} isNaked={true}/>, value: 6},
+  {digit: <Four isAdd={true} isNaked={true}/>, value: 8},
+];
+
 const pairs = [
   {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 3},
   {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 4},
@@ -118,7 +125,7 @@ React.useEffect(
         navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
         setIsPlay(false);
-        navigation.navigate('AddingTwins')}}/>
+        navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
