@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from "react";
-//import {TouchableOpacity} from "react-native-gesture-handler";
 import { Button, StyleSheet, View, Dimensions, ImageBackground} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import One from "../components/One";
 import Two from "../components/Two";
 import Three from "../components/Three";
@@ -34,7 +30,6 @@ const patterns = [
 
 const LearningDigitsScreen = ({ navigation, route }) => {
 
-    //const [stage, setStage] = useState(patterns[route.params.init]);
     const [counter, setCounter] = useState(route.params.init);
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
@@ -47,7 +42,6 @@ const LearningDigitsScreen = ({ navigation, route }) => {
               }
               else
               {
-                  //setStage(patterns[counter + 1]);
                   setCounter(counter + 1)
             }}}/>
         </ImageBackground>

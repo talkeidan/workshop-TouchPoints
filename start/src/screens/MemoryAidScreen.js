@@ -14,7 +14,6 @@ const patterns = [
 ];
 
 const MemoryAidScreen = ({navigation}) => {
-    //const [stage, setStage] = useState(patterns[0]);
     const [counter, setCounter] = useState(0);
     
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
@@ -27,7 +26,6 @@ const MemoryAidScreen = ({navigation}) => {
             }
             else
             {
-                //setStage(patterns[counter + 1]); {/*add limit to the counter, when counter reaches the end of the list go to previous screen*/}
                 setCounter(counter + 1)
             }
         }}/>

@@ -1,21 +1,13 @@
 import React from "react";
 import { SafeAreaView, ScrollView, Dimensions, StyleSheet, View, Image, TouchableOpacity} from "react-native";
-import { Col, Row, Grid } from "react-native-easy-grid";
 import ButtonsMenu from "../components/ButtonsMenu"
 import BackButton from "../components/BackButton"
-import DigitsButtonsMenu from "../components/DigitsButtonsMenu"
-import One from "../components/One";
 import Balloons from "../animations/Balloons";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
 const LearningDigitsMenuScreen = ({navigation, route}) => {
-  // React.useEffect(
-  //   () => navigation.addListener('blur', () => route.params.pause()),
-  //   []
-  // );
-
   React.useEffect(
     () => navigation.addListener('focus', () => route.params.play()),
     []

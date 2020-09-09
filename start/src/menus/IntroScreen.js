@@ -9,12 +9,6 @@ const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
 const IntroScreen = ({navigation, route}) => {
-
-  // React.useEffect(
-  //   () => navigation.addListener('blur', () => route.params.pause()),
-  //   []
-  // );
-
   React.useEffect(
     () => navigation.addListener('focus', () => route.params.play()),
     []
@@ -22,13 +16,13 @@ const IntroScreen = ({navigation, route}) => {
 
   return <View style={{height: '100%', width: '100%'}}>
     <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "זיהוי קווים ועיגולים" navigate={() => {
+    <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu1} title = "זיהוי קווים ועיגולים" navigate={() => {
       route.params.pause();
       navigation.navigate('CirclesLinesId')}}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "זיהוי קווים ועיגולים מתוך שלל צורות" navigate = {() => {
+    <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu2} title = "זיהוי קווים ועיגולים מתוך שלל צורות" navigate = {() => {
       route.params.pause();
       navigation.navigate('CirclesLinesInShapesId')}}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "תומכי זכרון לקווים ועיגולים" navigate={() => {
+    <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu3} title = "תומכי זכרון לקווים ועיגולים" navigate={() => {
       route.params.pause();
       navigation.navigate('MemoryAid')}}/>
   <Balloons style={styles.bgimage}/>
