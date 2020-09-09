@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "TouchPoints",
-    "slug": "נקודות מגע",
+    "name": "start",
+    "slug": "start",
     "version": "1.0.0",
     "orientation": "landscape",
-    "icon": "./assets/logo.png",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/loading5.png",
       "resizeMode": "contain",
