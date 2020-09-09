@@ -102,10 +102,10 @@ React.useEffect(
       []
     );
   
-     React.useEffect(
-       () => navigation.addListener('blur', () => setIsPlay(false)),
-       []
-     );
+    //  React.useEffect(
+    //    () => navigation.addListener('blur', () => setIsPlay(false)),
+    //    []
+    //  );
      return <View style={{direction: "ltr", height: '100%', width: '100%'}}>
     {music}
   <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
@@ -113,8 +113,12 @@ React.useEffect(
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => {
+        setIsPlay(false);
+        navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
+        setIsPlay(false);
+        navigation.navigate('AddingTwins')}}/>
       <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>

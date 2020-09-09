@@ -12,10 +12,10 @@ const isMobile = windowWidth <= 812 && true;
 
 const AddingNumbersScreen = ({navigation, route}) => {
 
-  React.useEffect(
-    () => navigation.addListener('blur', () => route.params.pause()),
-    []
-  );
+  // React.useEffect(
+  //   () => navigation.addListener('blur', () => route.params.pause()),
+  //   []
+  // );
 
   React.useEffect(
     () => navigation.addListener('focus', () => route.params.play()),
@@ -27,7 +27,9 @@ const AddingNumbersScreen = ({navigation, route}) => {
     <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => {
       route.params.pause()
       navigation.navigate('BigSmallDigit', {arr: route.params.arr})}}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}/>
+    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => {
+      route.params.pause();
+      navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}}/>
   <Balloons style={styles.bgimage}/>
   <BackButton onPress={() => navigation.goBack()}/>
 </View>

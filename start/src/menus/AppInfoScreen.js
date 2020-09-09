@@ -7,15 +7,15 @@ import Balloons from "../animations/Balloons";
 
 const AppInfoScreen = ({navigation, route}) => {
 
-  React.useEffect(
-    () => navigation.addListener('blur', () => route.params.pause()),
-    []
-  );
+  // React.useEffect(
+  //   () => navigation.addListener('blur', () => route.params.pause()),
+  //   []
+  // );
 
-  React.useEffect(
-    () => navigation.addListener('focus', () => route.params.play()),
-    []
-  );
+  // React.useEffect(
+  //   () => navigation.addListener('focus', () => route.params.play()),
+  //   []
+  // );
 
   return <View style={{justifyContent: "center", height: '100%', width: '100%'}}>
     <ImageBackground source={require('../../assets/note.png')} resizeMode='contain' style={styles.bgimage}>
