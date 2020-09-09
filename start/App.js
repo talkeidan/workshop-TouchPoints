@@ -53,53 +53,60 @@ const Stack = createStackNavigator()
      </NavigationContainer>
    );
  }
- 
 
-// import { createAppContainer } from 'react-navigation';
-// import { createStackNavigator } from 'react-navigation-stack';
-// import HomeScreen from "./src/menus/HomeScreen";
-// import IntroScreen from './src/menus/IntroScreen';
-// import LearningDigitsMenuScreen from './src/menus/LearningDigitsMenuScreen';
-// import IdentifyDigitsScreen from './src/menus/IdentifyDigitsScreen';
-// import AddingTwinsScreen from './src/menus/AddingTwinsScreen';
-// import AddingNumbersScreen from './src/menus/AddingNumbersScreen';
-// import AppInfoScreen from './src/menus/AppInfoScreen';
-// import CirclesLinesIdScreen from './src/screens/CirclesLinesIdScreen';//
-// import LearningDigitsScreen from './src/screens/LearningDigitsScreen';
-// import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdScreen';//
-// import MemoryAidScreen from './src/screens/MemoryAidScreen';//
-// import { YellowBox } from 'react-native';
-// import * as React from 'react';
-// import { I18nManager} from 'react-native';
+//  export default function App () {
+//   // state = {
+//   //   isReady: false,
+//   // };
+//   // componentDidMount() {
+//   //   this.changeScreenOrientation;
+//   // }
+  
+//     // if (!this.state.isReady) {
+//     //   return (
+//     //     <AppLoading
+//     //       startAsync={this._cacheResourcesAsync}
+//     //       onFinish={() => this.setState({ isReady: true })}
+//     //       onError={console.warn}
+//     //     />
+//     //   ); }
 
-// YellowBox.ignoreWarnings([
-//   'Animated: `useNativeDriver` was not specified.',
-// ]);
-// // import BoxScreen from './src/screens/BoxScreen';
-
-
-
-
-// const navigator = createStackNavigator(
-//   {
-//     Home: HomeScreen, 
-//     Intro: IntroScreen,
-//     LearningDigitsMenu: LearningDigitsMenuScreen,
-//     IdentifyDigits: IdentifyDigitsScreen,
-//     AddingTwins: AddingTwinsScreen,
-//     AddingNumbers: AddingNumbersScreen,
-//     AppInfo: AppInfoScreen,
-//     CirclesLinesId: CirclesLinesIdScreen,
-//     CirclesLinesInShapesId: CirclesLinesInShapesIdScreen,
-//     LearningDigits: LearningDigitsScreen,
-//     MemoryAid: MemoryAidScreen
-//   },
-//   {
-//     initialRouteName: 'Home',
-//     defaultNavigationOptions: {
-//       title: "touch points"
-//     }
+//       return (
+//         <NavigationContainer>
+//           <MyStack />
+//         </NavigationContainer>
+//       );
+      
+    
 //   }
-// );
 
-//export default createAppContainer(navigator);
+//   async changeScreenOrientation() {
+//     await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
+//   }
+
+//   async _cacheResourcesAsync() {
+//     const images = [require('./assets/playground.jpg'),
+//      require('./assets/kid9.png'),
+//      require('./assets/kid4.png'),
+//      require('./assets/home-music.mp3'),
+//      require('./assets/kid8.png'),
+//      require('./assets/kid7.png'), 
+//      require('./assets/kid6.png'), 
+//      require('./assets/kid5.png'), 
+//      require('./assets/kid1.png'), 
+//      require('./assets/alice.jpg'), 
+//      require('./assets/kid2.png'), 
+//      require('./assets/kid3.png'), 
+//      require('./assets/number1.png'),
+//      require('./assets/number2.png'),
+//      require('./assets/number3.png'),
+//      require('./assets/number4.png'),
+//      require('./assets/number5.png'),
+//      require('./assets/number6.png')];
+
+//     const cacheImages = images.map(image => {
+//       return Asset.fromModule(image).downloadAsync();
+//     }); 
+//     return Promise.all(cacheImages);
+//   }
+// }
