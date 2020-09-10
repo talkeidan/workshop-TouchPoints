@@ -148,6 +148,8 @@ const styles = StyleSheet.create({
     },
     bgimageAdd: {
         height: "100%",
+        //bottom: "10%",
+        left: isMobile? "0%" : "5%",
         aspectRatio: 1/1,
         shadowColor: "#36393d",
     },

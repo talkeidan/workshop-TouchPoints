@@ -111,10 +111,11 @@ const styles = StyleSheet.create({
         left: isMobile? "52%" : "54%",
     },
     bgimageAdd: {
-      marginTop: "2%",
+      height: "100%",
       aspectRatio: 1/1,
       shadowColor: "#36393d",
-      left: "10%"
+      left: "10%",
+      transform: [{rotate: '2deg'}],
     },
     addContainerLeft: {
       position: "absolute",

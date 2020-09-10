@@ -16,10 +16,10 @@ const AddingDiffDigitsScreen = ({navigation, route}) => {
     const [rewardState, setRewardState] = useState('rest');
     const [isDisabled, setIsDisabled] = useState(false);
 
-    return <View style={styles.mainContainer}> 
-    <ImageBackground style={styles.bgimage} source={require("../../assets/addingFace.jpg")} resizeMode="contain"> 
+    return <View style={styles.mainContainer}>
+    <ImageBackground style={styles.bgimage} source={require("../../assets/try2.png")} resizeMode="contain">
         <Confetti rewardState={rewardState}/>
-        <HomeButton onPress= {() => {navigation.navigate('Home')}}/>
+        <HomeButton style={{top: "3%", left: "1%"}} onPress= {() => {navigation.navigate('Home')}}/>
         <AddingPair isDisabled={isDisabled} setIsDisabled={() => setIsDisabled(true)} isFirstBigger={route.params.arr[counter].flag} first={route.params.arr[counter].first} second={route.params.arr[counter].second} setReward={() => setRewardState('reward')} result={route.params.arr[counter].value}/>
         <NextButton onPress= {() => {
             if (counter >= 4)
@@ -35,13 +35,13 @@ const AddingDiffDigitsScreen = ({navigation, route}) => {
         }}/>
         <NumbersLine result={route.params.arr[counter].value.toString()} setRewardState={() => setRewardState('reward')}/>
         </ImageBackground>
-        </View>
+         </View>
 };
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: "#01dbca"
+    backgroundColor: "#537dc5",
   },
   text: {
     fontSize: 30,
@@ -69,10 +69,9 @@ const styles = StyleSheet.create({
   },
   bgimage: {
     position: "relative",
-    height: '100%',
+    height: '95%',
     width: '100%',
-    backgroundColor: "#01dbca",
-    flex: 0.8,
+    backgroundColor: "#537dc5",
   }
 });
 

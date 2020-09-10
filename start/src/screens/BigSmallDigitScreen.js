@@ -15,7 +15,7 @@ const BigSmallDigitScreen = ({navigation, route}) => {
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/lake.png")} resizeMode="stretch"> 
         <Confetti rewardState={rewardState}/>
-        <HomeButton onPress= {() => {navigation.navigate('Home')}}/>
+        <HomeButton style={{top: "1.5%", left: "1%"}} onPress={() => {navigation.navigate('Home')}}/>
         <View style={styles.addContainerLeft}>
          {route.params.arr[counter].first}
          </View>

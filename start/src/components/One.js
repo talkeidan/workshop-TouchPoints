@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
         left: isMobile? "52%" : "54%",
     },
     bgimageAdd: {
-      right: "15%",
-      //aspectRatio: 1/1,
-      height: "95%",
+      right: "12%",
+      bottom: "10%",
+      height: "100%",
       shadowColor: "#36393d",
     },
     addContainerLeft: {

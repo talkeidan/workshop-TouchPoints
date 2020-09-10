@@ -2,7 +2,6 @@ import React from "react";
 import {View,  Image, StyleSheet, TouchableOpacity, Dimensions} from "react-native";
 import OptionDigit from "./OptionDigit";
 
-
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
@@ -27,13 +26,11 @@ export default class NumbersLine extends React.Component
     }}
     const styles = StyleSheet.create({
         line: {
-            backgroundColor:"yellow",
-            position: "absolute",
-            borderRadius: 20,
-            height: "20%",
+            backgroundColor:"#9bf0ec",
+            height: "15%",
             justifyContent: "center",
-            width: isMobile? "100%" : "100%",
-            top: "102%",
+            width: "100%",
+            bottom: "-2%",
             flexDirection: "row",
             zIndex: 1
         },
@@ -43,10 +40,8 @@ export default class NumbersLine extends React.Component
               zIndex: 1
         },
         one: {
-            height: "80%", 
+            height: "90%", 
             width: "75%", 
-            // zIndex: 1,
-            marginTop: "10%"
         },
         two: {
             height: "100%", 

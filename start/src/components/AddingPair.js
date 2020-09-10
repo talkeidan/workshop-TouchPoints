@@ -10,7 +10,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const AddingPair = ({isDisabled, setIsDisabled, isFirstBigger, first, second, setReward, result}) => {
     return <View style={styles.mainContainer}>
-         <Text style={styles.Text1}>+</Text>
          <View style={styles.addContainerLeft}>
          <TouchableOpacity onPress={() => {
              if (isFirstBigger) {
@@ -39,10 +38,10 @@ const AddingPair = ({isDisabled, setIsDisabled, isFirstBigger, first, second, se
 
 const styles = StyleSheet.create({
     mainContainer: {
-        // width: windowWidth,
-        // height: windowHeight,
         flex: 1,
         position:'relative',
+        borderTopWidth: 8,
+        borderColor: "#537dc5"
     },
       bgimage:{
           flex: 1,
@@ -109,21 +108,21 @@ const styles = StyleSheet.create({
       },
       addContainer: {
         position: "absolute",
-        width: isMobile? "15%" : "25%",
+        padding: "10%",
+        width: isMobile? "22%" : "33%",
         aspectRatio: 1/1,
-        borderRadius: 150,
-        backgroundColor: "pink",
-        top: isMobile? "22%" : "22%",
-        left: isMobile? "52%" : "54%",
+        borderRadius: normalize(150),
+        top: isMobile? "2%" : "8%",
+        left: isMobile? "53%" : "54%",
     },
     addContainerLeft: {
       position: "absolute",
-      width: isMobile? "15%" : "25%",
+      width: isMobile? "22%" : "33%",
+      padding: "10%",
       aspectRatio: 1/1,
-      borderRadius: 150,
-      backgroundColor: "pink",
-      top: isMobile? "22%" : "22%",
-      left: isMobile? "32%" : "21%",
+      borderRadius: normalize(150),
+      top: isMobile? "2%" : "8%",
+      left: isMobile? "26%" : "14%",
   }
 });
 

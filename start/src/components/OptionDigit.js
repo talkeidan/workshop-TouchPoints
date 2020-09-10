@@ -33,7 +33,8 @@ export default class OptionDigit extends React.Component
     const styles = StyleSheet.create({
         container: {
             zIndex: 1, 
-            borderWidth: 2, 
+            borderWidth: 1,
+            borderColor: "#537dc5",
             height: "100%", 
             width: "11.1%",
         },
