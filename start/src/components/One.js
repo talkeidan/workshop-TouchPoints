@@ -9,7 +9,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const One = ({isRight, isAdd, onPress, isNaked}) => {
+const One = ({isRight, isAdd, onPress, isNaked, enableNext}) => {
     const [counter, setCounter] = useState(1);
     const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
@@ -22,7 +22,11 @@ const One = ({isRight, isAdd, onPress, isNaked}) => {
             pressedStyle={isNaked? styles.button : {}}
             isAdd={isAdd}
             setCounter={() => setCounter(counter - 1)} 
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+               if (enableNext != null) {
+                 enableNext();
+               }
+              setRewardState('reward')}} 
             count={counter}/>
         </ImageBackground>
 }
@@ -31,7 +35,8 @@ const styles = StyleSheet.create({
       bgimage:{
         flex: 1,
         position: "relative",
-        marginTop: "5%",
+        marginTop: "2%",
+        marginBottom: "2%",
         borderRadius: 20,
         height: "100%",
         aspectRatio: 1/1,
@@ -40,26 +45,26 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         shadowOpacity: 1,
         direction: 'ltr',
+        right: "10%",
         alignSelf: "center"
       },
     button: {
         position: "absolute",
         backgroundColor: "black",
         aspectRatio: 1 / 1,
-        height: '15%',
+        height: '10%',
         borderRadius: normalize(35),
-        left: "60%",
-        top: "5.2%"
-
+        left: "61.5%",
+        top: "20%"
       },
       transButton: {
         position: "absolute",
         backgroundColor: "yellow",
         aspectRatio: 1 / 1,
-        height: '15%',
+        height: '10%',
         borderRadius: normalize(35),
-        left: "60%",
-        top: "5.2%"
+        left: "61.5%",
+        top: "20%"
       },
       addContainer: {
         position: "absolute",
