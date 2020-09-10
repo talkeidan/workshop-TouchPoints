@@ -99,17 +99,17 @@ React.useEffect(
      return <View style={{direction: "ltr", height: '100%', width: '100%'}}>
     {music}
   <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/joey.png")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => {
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice2.png")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => {
         setIsPlay(false);
         navigation.navigate('IdentifyDigits')}}/>
       <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
         setIsPlay(false);
         navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/joey.png")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
          <MaterialCommunityIcons name="information" style={styles.icon}/>
