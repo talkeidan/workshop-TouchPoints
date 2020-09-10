@@ -43,7 +43,7 @@ const DigitsIdScreen = ({navigation, route}) => {
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
             <HomeButton onPress={() => {navigation.navigate('Home')}}/>
-            <Curr enableNext={() => setIsDisabled(false)}></Curr>
+            <Curr isNaked={true} enableNext={() => setIsDisabled(false)}></Curr>
             <NextButton disabled={isDisabled} onPress={() => {
               if (counter >= 8)
               {
