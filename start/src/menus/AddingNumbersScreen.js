@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import { Dimensions, StyleSheet, View, Image} from "react-native";
 import ButtonsMenu from "../components/ButtonsMenu"
-import { Entypo } from "@expo/vector-icons";
-import { Col, Row, Grid } from "react-native-easy-grid";
 import normalize from "react-native-normalize";
 import Balloons from "../animations/Balloons";
 import BackButton from "../components/BackButton"
@@ -13,21 +11,18 @@ const isMobile = windowWidth <= 812 && true;
 const AddingNumbersScreen = ({navigation, route}) => {
 
   React.useEffect(
-    () => navigation.addListener('blur', () => route.params.pause()),
-    []
-  );
-
-  React.useEffect(
     () => navigation.addListener('focus', () => route.params.play()),
     []
   );
 
   return <View style={{height: '100%', width: '100%'}}>
     <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => {
+    <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu1} title = "גדול קטן" navigate={() => {
       route.params.pause()
       navigation.navigate('BigSmallDigit', {arr: route.params.arr})}}/>
-    <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}/>
+    <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu2} title = "חיבור" navigate = {() => {
+      route.params.pause();
+      navigation.navigate('AddingDiffDigits', {arr: route.params.arr})}}/>
   <Balloons style={styles.bgimage}/>
   <BackButton onPress={() => navigation.goBack()}/>
 </View>

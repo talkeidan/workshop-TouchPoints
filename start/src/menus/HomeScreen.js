@@ -30,6 +30,13 @@ const digits = [
   { name: <Nine isNaked={true}></Nine>, value: 9},
 ];
 
+const twins = [
+  {digit: <One isAdd={true} isNaked={true}/>, value: 2},
+  {digit: <Two isAdd={true} isNaked={true}/>, value: 4},
+  {digit: <Three isAdd={true} isNaked={true}/>, value: 6},
+  {digit: <Four isAdd={true} isNaked={true}/>, value: 8},
+];
+
 const pairs = [
   {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Two isRight={true} isAdd={true} isNaked={true}></Two>, value: 3},
   {flag: false, first: <One isRight={false} isAdd={true} isNaked={true}></One>, second: <Three isRight={true} isAdd={true} isNaked={true}></Three>, value: 4},
@@ -102,20 +109,20 @@ React.useEffect(
       []
     );
   
-     React.useEffect(
-       () => navigation.addListener('blur', () => setIsPlay(false)),
-       []
-     );
      return <View style={{direction: "ltr", height: '100%', width: '100%'}}>
     {music}
   <Image style={{zIndex: 1, height: "30%", width: '100%', alignSelf: "center"}} resizeMode="contain" source={require('../../assets/header.png')}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu2} title = "לימוד ספרות" navigate = {() => 
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => navigation.navigate('AddingTwins')}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => {
+        setIsPlay(false);
+        navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
+        setIsPlay(false);
+        navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>
+      <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
          <MaterialCommunityIcons name="information" style={styles.icon}/>

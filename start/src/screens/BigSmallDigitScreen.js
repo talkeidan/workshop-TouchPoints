@@ -10,8 +10,6 @@ const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
 const BigSmallDigitScreen = ({navigation, route}) => {
-   // const [first, setFirst] = useState(route.params.arr[0].first);
-    //const [second, setSecond] = useState(route.params.arr[0].second);
     const [counter, setCounter] = useState(0);
     const [rewardState, setRewardState] = useState('rest');
 
@@ -32,8 +30,6 @@ const BigSmallDigitScreen = ({navigation, route}) => {
             }
             else
             {
-                //setFirst(route.params.arr[counter + 1].first);
-                //setSecond(route.params.arr[counter + 1].second);
                 setCounter(counter + 1);
                 setRewardState('rest');
             }
@@ -44,7 +40,6 @@ const BigSmallDigitScreen = ({navigation, route}) => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    //backgroundColor: "#01dbca"
   },
   addContainer: {
     position: "absolute",
@@ -62,9 +57,7 @@ addContainerLeft: {
   position: "absolute",
   aspectRatio: 1/1,
   width: isMobile? "30%" : "42%",
-  //height: "100%",
   justifyContent: "center",
-  //backgroundColor: "pink",
   top: isMobile? "20%" : "15%",
   left: isMobile? "0%" : "-5%",
   shadowColor: "#36393d",

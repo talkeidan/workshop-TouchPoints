@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Dimensions, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
-import ButtonsMenu from "../components/HomeButton"
-import { Col, Row, Grid } from "react-native-easy-grid";
-import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import CirclesId from "../components/intro/CirclesId";
@@ -19,7 +16,6 @@ const patterns = [
 ];
 
 const CirclesLinesIdScreen = ({navigation}) => {
-    //const [stage, setStage] = useState(patterns[0]);
     const [counter, setCounter] = useState(0);
 
 
@@ -33,7 +29,6 @@ const CirclesLinesIdScreen = ({navigation}) => {
             }
             else
             {
-                //setStage(patterns[counter + 1]); {/*add limit to the counter, when counter reaches the end of the list go to previous screen*/}
                 setCounter(counter + 1)
             }
         }}/>

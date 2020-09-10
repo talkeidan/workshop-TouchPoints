@@ -1,24 +1,14 @@
 import React from "react";
-import { Text, StyleSheet, View, ImageBackground, Button} from "react-native";
+import { Text, StyleSheet, View, ImageBackground, SafeAreaView, ScrollView} from "react-native";
 import normalize from "react-native-normalize";
 import BackButton from "../components/BackButton"
 import Balloons from "../animations/Balloons";
 
 
 const AppInfoScreen = ({navigation, route}) => {
-
-  React.useEffect(
-    () => navigation.addListener('blur', () => route.params.pause()),
-    []
-  );
-
-  React.useEffect(
-    () => navigation.addListener('focus', () => route.params.play()),
-    []
-  );
-
   return <View style={{justifyContent: "center", height: '100%', width: '100%'}}>
     <ImageBackground source={require('../../assets/note.png')} resizeMode='contain' style={styles.bgimage}>
+      {/* <View style={{transform: [{rotate: '2deg'}],  height: "78.6%", aspectRatio: 1/1, borderWidth: 8}}/> */}
     <Text style={styles.textContainer}>
     האפליקציה פותחה על מנת ללמד ילדים, ובפרט ילדים בעלי לקויות למידה חשבון בסיסי: למנות ולחבר ספרות עד 10.
     קהל היעד הוא ילדים בגילאי גן חובה ועד כיתה א', השיטה פותחה על ידי רונית קידן, מורה להוראה מתקנת, שביקשה ליצור חוויה אינטרקטיבית עבור הילדים.
@@ -39,8 +29,10 @@ const styles = StyleSheet.create({
     width: '20%'
   },
   textContainer: {
-    width: "50%",
-    height: '70%',
+    transform: [{rotate: '2deg'}],  
+    height: "78.6%", 
+    aspectRatio: 1/1,
+    borderWidth: 8,
     textAlign: "center",
     textAlignVertical: "center",
     fontSize: normalize(9),
@@ -58,7 +50,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 1
+    zIndex: 1,
   },
   anim: {
     position: "relative",
