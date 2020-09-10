@@ -9,9 +9,8 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const Two = ({isRight, isAdd, onPress, isNaked}) => {
+const Two = ({isRight, isAdd, onPress, isNaked, enableNext}) => {
     const [counter, setCounter] = useState(2);
-    const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
 
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
@@ -21,7 +20,11 @@ const Two = ({isRight, isAdd, onPress, isNaked}) => {
             unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
             pressedStyle={isNaked? styles.button1 : {}}
             setCounter={() => setCounter(counter - 1)} 
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+                if (enableNext != null) {
+                  enableNext();
+                }
+              setRewardState('reward')}} 
             count={counter}
             isAdd={isAdd}/>
         <Point 
@@ -29,11 +32,13 @@ const Two = ({isRight, isAdd, onPress, isNaked}) => {
             pressedStyle={isNaked? styles.button2 : {}}
             setCounter={() => setCounter(counter - 1)} 
             isAdd={isAdd}
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+              if (enableNext != null) {
+                enableNext();
+              }
+              setRewardState('reward')}} 
             count={counter}/>
         </ImageBackground>
-    // </View>
-    
 }
 
 
@@ -64,36 +69,36 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "black",
         borderRadius: normalize(35),
-        left: '11%',
-        top: '12.3%',
-        height: "18%",
+        left: '13%',
+        top: '18%',
+        height: "10%",
         aspectRatio: 1/1
       },
       button2: {
         position: "absolute",
         backgroundColor: "black",
         borderRadius: normalize(35),
-        left: '11%',
-        top: "65.4%",
-        height: "18%",
+        left: '15.5%',
+        top: "69%",
+        height: "10%",
         aspectRatio: 1/1
       },
       transButton1: {
         position: "absolute",
         backgroundColor: "yellow",
         borderRadius: normalize(35),
-        left: '11%',
-        top: '12.3%',
-        height: "18%",
+        left: '13%',
+        top: '18%',
+        height: "10%",
         aspectRatio: 1/1
       },
       transButton2: {
         position: "absolute",
         backgroundColor: "yellow",
         borderRadius: normalize(35),
-        left: '11%',
-        top: "65.4%",
-        height: "18%",
+        left: '15.5%',
+        top: "69%",
+        height: "10%",
         aspectRatio: 1/1
       },
       addContainer: {

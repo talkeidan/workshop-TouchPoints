@@ -18,18 +18,6 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const digits = [
-  { name: <One isNaked={true}></One>, value: 1},
-  { name: <Two isNaked={true}></Two>, value: 2},
-  { name: <Three isNaked={true}></Three>, value: 3},
-  { name: <Four isNaked={true}></Four>, value: 4},
-  { name: <Five isNaked={true}></Five>, value: 5},
-  { name: <Six isNaked={true}></Six>, value: 6},
-  { name: <Seven isNaked={true}></Seven>, value: 7},
-  { name: <Eight isNaked={true}></Eight>, value: 8},
-  { name: <Nine isNaked={true}></Nine>, value: 9},
-];
-
 const twins = [
   {digit: <One isAdd={true} isNaked={true}/>, value: 2},
   {digit: <Two isAdd={true} isNaked={true}/>, value: 4},
@@ -83,8 +71,7 @@ const shuffleDeck = (array) => {
   return array;
 };
 
-export default HomeScreen = ({navigation}) =>
-{
+export default HomeScreen = ({navigation}) => {
   const [isPlay, setIsPlay] = useState(true);
   const [isMute, setIsMute] = useState(false);
 
@@ -118,7 +105,7 @@ React.useEffect(
         navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu3} title = "זיהוי ספרות" navigate = {() => {
         setIsPlay(false);
-        navigation.navigate('IdentifyDigits', {arr: shuffleDeck(digits)})}}/>
+        navigation.navigate('IdentifyDigits')}}/>
       <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
         setIsPlay(false);
         navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>

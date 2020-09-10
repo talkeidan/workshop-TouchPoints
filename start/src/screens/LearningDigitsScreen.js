@@ -3,6 +3,7 @@ import { Button, StyleSheet, View, Dimensions, ImageBackground} from "react-nati
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
+import PreviousButton from "../components/PreviousButton";
 import One from "../components/One";
 import Two from "../components/Two";
 import Three from "../components/Three";
@@ -16,33 +17,44 @@ import Nine from "../components/Nine";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height - 60;
 
-const patterns = [
-  { name: <One isNaked={false}></One>},
-  { name: <Two isNaked={false}></Two>},
-  { name: <Three isNaked={false}></Three>},
-  { name: <Four isNaked={false}></Four>},
-  { name: <Five isNaked={false}></Five>},
-  { name: <Six isNaked={false}></Six>},
-  { name: <Seven isNaked={false}></Seven>},
-  { name: <Eight isNaked={false}></Eight>},
-  { name: <Nine isNaked={false}></Nine>},
-];
 
 const LearningDigitsScreen = ({ navigation, route }) => {
+  const [counter, setCounter] = useState(route.params.init);
+  const [isDisabled, setIsDisabled] = useState(true);
 
-    const [counter, setCounter] = useState(route.params.init);
+  const patterns = [
+    { name: <One isNaked={false} enableNext={() => setIsDisabled(false)}></One>},
+    { name: <Two isNaked={false} enableNext={() => setIsDisabled(false)}></Two>},
+    { name: <Three isNaked={false} enableNext={() => setIsDisabled(false)}></Three>},
+    { name: <Four isNaked={false} enableNext={() => setIsDisabled(false)}></Four>},
+    { name: <Five isNaked={false} enableNext={() => setIsDisabled(false)}></Five>},
+    { name: <Six isNaked={false} enableNext={() => setIsDisabled(false)}></Six>},
+    { name: <Seven isNaked={false} enableNext={() => setIsDisabled(false)}></Seven>},
+    { name: <Eight isNaked={false} enableNext={() => setIsDisabled(false)}></Eight>},
+    { name: <Nine isNaked={false} enableNext={() => setIsDisabled(false)}></Nine>},
+  ];
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
             <HomeButton onPress={() => {navigation.navigate('Home')}}/>
             {patterns[counter].name}
-            <NextButton onPress={() => {
+            <NextButton disabled={isDisabled} onPress={() => {
               if (counter >= patterns.length - 1)
               {
                   navigation.navigate('LearningDigitsMenu');//in case of 9
               }
               else
               {
+                  setIsDisabled(true)
                   setCounter(counter + 1)
+            }}}/>
+            <PreviousButton onPress={() => {
+              if (counter < 0)
+              {
+                  navigation.navigate('LearningDigitsMenu');//in case of 9
+              }
+              else
+              {
+                  setCounter(counter - 1)
             }}}/>
         </ImageBackground>
 };

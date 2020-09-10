@@ -9,7 +9,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const Three = ({isRight, isAdd, onPress, isNaked}) => {
+const Three = ({isRight, isAdd, onPress, isNaked, enableNext}) => {
     const [counter, setCounter] = useState(3);
     const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
@@ -23,21 +23,33 @@ const Three = ({isRight, isAdd, onPress, isNaked}) => {
             pressedStyle={isNaked? styles.button1 : {}}
             isAdd={isAdd}
             setCounter={() => setCounter(counter - 1)} 
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+               if (enableNext != null) {
+                 enableNext();
+               }
+              setRewardState('reward')}} 
             count={counter}/>
         <Point 
             unpressedStyle={isNaked? styles.transButton2 : styles.button2} 
             pressedStyle={isNaked? styles.button2 : {}}
             isAdd={isAdd}
             setCounter={() => setCounter(counter - 1)} 
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+              if (enableNext != null) {
+                enableNext();
+              }
+              setRewardState('reward')}} 
             count={counter}/>
         <Point 
             unpressedStyle={isNaked? styles.transButton3 : styles.button3} 
             isAdd={isAdd}
             pressedStyle={isNaked? styles.button3 : {}}
             setCounter={() => setCounter(counter - 1)} 
-            setRewardState={(rewardState) => setRewardState('reward')} 
+            setRewardState={(rewardState) => {
+              if (enableNext != null) {
+                enableNext();
+              }
+              setRewardState('reward')}} 
             count={counter}/>
         </ImageBackground>
 }
