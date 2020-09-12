@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "15%" : "15%", 
     top: isMobile? "30%" : "26%",
     position: "absolute"
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "35%" : "40%", 
     top: isMobile? "30%" : "26%",
     position: "absolute"
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "55%" : "65%", 
     top: isMobile? "30%" : "26%",
     position: "absolute"
@@ -85,6 +88,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "75%" : "15%", 
     top: isMobile? "30%" : "50%",
     position: "absolute"
@@ -95,6 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "5%" : "40%", 
     top: isMobile? "63%" : "50%", 
     position: "absolute"
@@ -105,6 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "25%" : "65%", 
     top: isMobile? "63%" : "50%", 
     position: "absolute"
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "45%" : "15%", 
     top: isMobile? "63%" : "74%", 
     position: "absolute"
@@ -125,6 +132,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "65%" : "40%", 
     top: isMobile? "63%" : "74%", 
     position: "absolute"
@@ -135,6 +143,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 1,
     borderWidth: 1,
+    borderColor: "grey",
     left: isMobile? "85%" : "65%", 
     top: isMobile? "63%" : "74%", 
     position: "absolute"

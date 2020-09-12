@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "13%",
-        left: "16.5%"
+        top: "11%",
+        left: "18%"
       },
       button2: {
         position: "absolute",
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "13%",
+        top: "11%",
         left: "40.5%"
       }, 
       button3: {
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "13%",
+        top: "11%",
         left: "64.5%"
       },
       button4: {
@@ -171,8 +171,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "75%",
-        left: "27%"
+        top: "73%",
+        left: "29%"
       },
       transButton1: {
         position: "absolute",

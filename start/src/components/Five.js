@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "9%",
-        left: isMobile? "53%" : "53%"
+        left: "51%"
       }, 
       button3: {
         position: "absolute",
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "9%",
-        left: isMobile? "32%" : "32%",
+        left: "32%",
       },
       transButton2: {
         position: "absolute",
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "9%",
-        left: isMobile? "53%" : "53%"
+        left: "51%"
       }, 
       transButton3: {
         position: "absolute",

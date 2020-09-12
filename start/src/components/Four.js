@@ -68,9 +68,10 @@ const styles = StyleSheet.create({
     bgimage: {
         flex: 1,
         position: "relative",
-        marginTop: "1%",
+        top: "5%",
+        //marginTop: "5%",
         borderRadius: 20,
-        height: "95%",
+        height: "100%",
         aspectRatio: 1/1,
         shadowColor: "#36393d",
         shadowOffset: { width: 1 },
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: "18%",
+        left: "16%",
         top: "27%",
       },
       button2: {
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         left: "64%",
-        top: "76%",
+        top: "80%",
       },
       transButton1: {
         position: "absolute",
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        left: "18%",
+        left: "16%",
         top: "27%",
       },
       transButton2: {
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         left: "64%",
-        top: "76%",
+        top: "80%",
       },
       addContainer: {
         position: "absolute",
