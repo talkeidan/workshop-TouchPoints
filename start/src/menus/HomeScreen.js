@@ -109,7 +109,7 @@ React.useEffect(
       <ButtonsMenu resize="cover" source={require("../../assets/images/alice.jpg")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
         setIsPlay(false);
         navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/images/joey.png")} style={styles.buttonMenu5} title = "חיבור ספרות שונות" navigate= {() => 
+      <ButtonsMenu resize="cover" source={require("../../assets/images/joey.png")} style={styles.buttonMenu5} title = "ספרות שונות" navigate= {() => 
         navigation.navigate('AddingNumbers', {play: () => setIsPlay(true), pause: () => setIsPlay(false), arr: shuffleDeck(pairs)})}/>
         <TouchableOpacity style={styles.infoStyle} onPress={() => navigation.navigate('AppInfo', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}>
          <MaterialCommunityIcons name="information" style={styles.icon}/>

@@ -9,7 +9,7 @@ import Confetti from "../animations/Confetti";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true; 
-const Crocodiles = ({isLeftBigger, setReward, reward}) => {
+const Crocodiles = ({isStage2, isLeftBigger, setReward, reward}) => {
     const [isLeftComplete, setIsLeftComplete] = useState(false);
     const [isRightComplete, setIsRightComplete] = useState(false);
     const [imageSource, setImageSource] = useState("");
@@ -34,20 +34,20 @@ const Crocodiles = ({isLeftBigger, setReward, reward}) => {
     <Draggable shouldReverse={true} x={windowWidth * 0.6} y={windowHeight * 0.58} onDragRelease={(event, gestureState) => {
         if (gestureState.moveX >= (windowWidth * 0.22) && gestureState.moveX <= (windowWidth * 0.65) && gestureState.moveY >= (windowHeight * 0.34) && gestureState.moveY <= (windowHeight * 0.54) && isLeftBigger) {
             setReward();
-            setImageSource(require("../../assets/croc-right.png"));
+            setImageSource(isStage2? require("../../assets/left-big.png") : require("../../assets/croc-right.png"));
             setIsLeftComplete(true);
         }
     }}>
-        <Image resizeMode="contain" style={styles.image} source={require("../../assets/croc-right.png")}/>
+        <Image resizeMode="contain" style={styles.image} source={isStage2? require("../../assets/left-big.png") : require("../../assets/croc-right.png")}/>
     </Draggable>
     <Draggable shouldReverse={true} x={windowWidth * 0.02} y={windowHeight * 0.58} onDragRelease={(event, gestureState) => {
         if (gestureState.moveX >= (windowWidth * 0.22) && gestureState.moveX <= (windowWidth * 0.65) && gestureState.moveY >= (windowHeight * 0.34) && gestureState.moveY <= (windowHeight * 0.54) && !isLeftBigger) {
             setReward();
-            setImageSource(require("../../assets/croc-left.png"));
+            setImageSource(isStage2? require("../../assets/right-big.png") : require("../../assets/croc-left.png"));
             setIsRightComplete(true);
         }
     }}>
-        <Image resizeMode="contain" style={styles.image} source={require("../../assets/croc-left.png")}/>
+        <Image resizeMode="contain" style={styles.image} source={isStage2? require("../../assets/right-big.png") : require("../../assets/croc-left.png")}/>
     </Draggable>
     </View>
     }
@@ -65,7 +65,11 @@ const Crocodiles = ({isLeftBigger, setReward, reward}) => {
 const styles = StyleSheet.create({
     image: {
         aspectRatio: 1/1,
-        height: isMobile? 220 : 400
+        height: isMobile? 220 : 400,
+        shadowColor: "#36393d",
+        shadowOffset: { width: 1 },
+        shadowRadius: 5,
+        shadowOpacity: 1,
     },
     imageAfter: {
         aspectRatio: 1/1,

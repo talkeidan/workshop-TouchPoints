@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 1 },
         shadowRadius: 5,
         shadowOpacity: 1,
-        direction: 'ltr',
-        alignSelf: "center"
+        alignSelf: "center",
+        transform: [{rotate: '2deg'}]
       },
     image: {
         position: "absolute",

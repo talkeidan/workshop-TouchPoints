@@ -16,6 +16,8 @@ import CirclesLinesInShapesIdScreen from './src/screens/CirclesLinesInShapesIdSc
 import MemoryAidScreen from './src/screens/MemoryAidScreen';
 import AddingDiffDigitsScreen from './src/screens/AddingDiffDigitsScreen';
 import BigSmallDigitScreen from './src/screens/BigSmallDigitScreen';
+import BigSmallDigitScreen2 from './src/screens/BigSmallDigitScreen2';
+import BigSmallMenuScreen from './src/menus/BigSmallMenuScreen';
 
 I18nManager.allowRTL(false);
 
@@ -41,6 +43,8 @@ const Stack = createStackNavigator()
        <Stack.Screen name="CirclesLinesInShapesId" component={CirclesLinesInShapesIdScreen} options={{title: 'זיהוי עיגולים וקווים מתוך צורות'}}/>
        <Stack.Screen name="MemoryAid" component={MemoryAidScreen} options={{title: 'תומכי זיכרון'}} />
        <Stack.Screen name="BigSmallDigit" component={BigSmallDigitScreen} options={{title: 'גדול קטן'}} />
+       <Stack.Screen name="BigSmallDigit2" component={BigSmallDigitScreen2} options={{title: '2גדול קטן'}} />
+       <Stack.Screen name="BigSmallMenu" component={BigSmallMenuScreen} options={{title: 'תפריט גדול קטן'}} />
        <Stack.Screen name="AddingDiffDigits" component={AddingDiffDigitsScreen} options={{title: 'חיבור ספרות שונות'}} />
      </Stack.Navigator>
    );
