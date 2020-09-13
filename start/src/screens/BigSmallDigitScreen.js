@@ -11,6 +11,7 @@ const isMobile = windowWidth <= 812 && true;
 
 const BigSmallDigitScreen = ({navigation, route}) => {
     const [counter, setCounter] = useState(0);
+    const [isDisabled, setIsDisabled] = useState(true);
     const [rewardState, setRewardState] = useState('rest');
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/lake.png")} resizeMode="stretch"> 
@@ -22,14 +23,15 @@ const BigSmallDigitScreen = ({navigation, route}) => {
          <View style={styles.addContainer}>
          {route.params.arr[counter].second}
          </View>
-        <Crocodiles isLeftBigger={route.params.arr[counter].flag} setReward={() => setRewardState('reward')} reward={rewardState}/> 
-        <NextButton onPress= {() => {
+        <Crocodiles isLeftBigger={route.params.arr[counter].flag} enableNext={() => setIsDisabled(false)} setReward={() => setRewardState('reward')} reward={rewardState}/> 
+        <NextButton disabled={isDisabled} onPress= {() => {
             if (counter >= 4)
             {
                 navigation.navigate('Home');
             }
             else
             {
+                setIsDisabled(true);
                 setCounter(counter + 1);
                 setRewardState('rest');
             }
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     width: isMobile? "30%" : "42%",
     aspectRatio: 1/1,
     justifyContent: "center",
-    top: isMobile? "20%" : "15%",
+    top: isMobile? "15%" : "15%",
     left: isMobile? "70%" : "63%",
     shadowColor: "#36393d",
     shadowOffset: { width: 1 },
@@ -58,7 +60,7 @@ addContainerLeft: {
   aspectRatio: 1/1,
   width: isMobile? "30%" : "42%",
   justifyContent: "center",
-  top: isMobile? "20%" : "15%",
+  top: isMobile? "15%" : "15%",
   left: isMobile? "0%" : "-5%",
   shadowColor: "#36393d",
   shadowOffset: { width: 1 },

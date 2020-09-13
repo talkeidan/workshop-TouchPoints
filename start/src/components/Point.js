@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {TouchableOpacity} from "react-native";
+import {TouchableOpacity, StyleSheet} from "react-native";
 import { Video, Audio } from 'expo-av';
 
 
@@ -32,7 +32,7 @@ const Point = ({isAdd, unpressedStyle, pressedStyle, setRewardState, setCounter,
         }
       }, [isPress]);
 
-return <TouchableOpacity style={myStyle} onPress={() =>
+return <TouchableOpacity style={isAdd? StyleSheet.compose(styles.trans, myStyle) : myStyle} onPress={() =>
               { 
                 setIsPress(true);
                 setCounter();
@@ -40,7 +40,11 @@ return <TouchableOpacity style={myStyle} onPress={() =>
                     {bubble}
                     </TouchableOpacity>
             };
-
+const styles = StyleSheet.create({
+    trans: {
+        backgroundColor: "yellow"
+    }
+})
 
 
 export default Point;

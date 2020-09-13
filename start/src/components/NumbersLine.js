@@ -13,7 +13,7 @@ export default class NumbersLine extends React.Component
           <View style={styles.line} >
               <OptionDigit style={styles.one} source={require("../../assets/number1.png")} value="1" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
               <OptionDigit style={styles.two} source={require("../../assets/number2.png")} value="2" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
-              <OptionDigit style={styles.three} source={require("../../assets/number3-normal.png")} value="3" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
+              <OptionDigit style={styles.three} source={require("../../assets/number3.png")} value="3" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
               <OptionDigit style={styles.four} source={require("../../assets/number4.png")} value="4" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
               <OptionDigit style={styles.five} source={require("../../assets/number5.png")} value="5" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
               <OptionDigit style={styles.six} source={require("../../assets/number6.png")} value="6" result={this.props.result} setRewardState={() => this.props.setRewardState()}/>
