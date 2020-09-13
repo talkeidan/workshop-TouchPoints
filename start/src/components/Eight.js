@@ -118,14 +118,15 @@ const styles = StyleSheet.create({
     bgimage:{
       flex: 1,
       position: "relative",
-      marginTop: "1%",
+      top: "5%",
+      //marginTop: "2%",
+      padding: "5%",
       height: "100%",
       aspectRatio: 1/1,
       shadowColor: "#36393d",
       shadowOffset: { width: 1 },
       shadowRadius: 5,
       shadowOpacity: 1,
-      direction: 'ltr',
       alignSelf: "center"
     },
     button1: {
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "20%"
+        left: "28%"
       },
       button2: {
         position: "absolute",
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "22%"
+        left: "30%"
       }, 
       button3: {
         position: "absolute",
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "70%"
+        left: "75%"
       },
       button4: {
         position: "absolute",
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "68%"
+        left: "73%"
       },
       button5: {
         position: "absolute",
@@ -171,7 +172,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "20%"
+        left: "28%"
       },
        button6: {
         position: "absolute",
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "22%"
+        left: "29%"
       },
       button7: {
         position: "absolute",
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "70%"
+        left: "77%"
       },
       button8: {
         position: "absolute",
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "68%"
+        left: "75%"
       },
       transButton1: {
         position: "absolute",
