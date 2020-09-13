@@ -42,7 +42,7 @@ return <TouchableOpacity style={isAdd? StyleSheet.compose(styles.trans, myStyle)
             };
 const styles = StyleSheet.create({
     trans: {
-        backgroundColor: "yellow"
+        backgroundColor: "yellow",
     }
 })
 
