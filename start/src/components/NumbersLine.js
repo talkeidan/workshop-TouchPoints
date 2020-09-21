@@ -52,9 +52,10 @@ export default class NumbersLine extends React.Component
             marginLeft: "10%"
         },
         three: {
-            height: "100%", 
-            width: "100%", 
+            height: isMobile? "95%" : "140%", 
+            width: isMobile? "100%" : "140%", 
             zIndex: 1,
+            bottom: isMobile? 0 : "24%"
         },
         four: {
             height: "90%", 

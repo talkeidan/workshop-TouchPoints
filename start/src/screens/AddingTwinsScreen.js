@@ -13,6 +13,7 @@ const isMobile = windowWidth <= 812 && true;
 
 const AddingTwinsScreen = ({navigation, route}) => {
     const [counter, setCounter] = useState(0);
+    const [isDisabled, setIsDisabled] = useState(true);
     const [rewardState, setRewardState] = useState('rest');
 
     return <View style={styles.mainContainer}>
@@ -27,7 +28,7 @@ const AddingTwinsScreen = ({navigation, route}) => {
         {route.params.arr[counter].digit}
         </View>
         </View>
-        <NextButton onPress= {() => {
+        <NextButton disabled={isDisabled} onPress= {() => {
             if (counter >= 3)
             {
                 navigation.navigate('Home');
@@ -36,9 +37,12 @@ const AddingTwinsScreen = ({navigation, route}) => {
             {
                 setCounter(counter + 1);
                 setRewardState('rest');
+                setIsDisabled(true)
             }
         }}/>
-        <NumbersLine result={route.params.arr[counter].value.toString()} setRewardState={() => setRewardState('reward')}/>
+        <NumbersLine result={route.params.arr[counter].value.toString()} setRewardState={() => {
+          setIsDisabled(false)
+          setRewardState('reward')}}/>
         </ImageBackground>
          </View>
 };
