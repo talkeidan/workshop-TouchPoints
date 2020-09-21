@@ -14,6 +14,9 @@ const Five = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
   const [counter, setCounter] = useState(5);
   const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
+  console.log(isAdd);
+  console.log(isNaked);
+
   if (disabled) {
     return <ImageBackground style={styles.bgimageAdd} source={require("../../assets/number5.png")} resizeMode="contain">
 </ImageBackground>
@@ -22,7 +25,7 @@ const Five = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
         isNaked ? rewardState == 'reward' ? require("../../assets/kid5.png") : require("../../assets/number5.png") : isAdd ? require("../../assets/number5.png") : rewardState == 'reward' ? require("../../assets/kid5.png") : require("../../assets/kid-point5.png")} resizeMode="contain">
     <Confetti rewardState={rewardState}/>
     <Point 
-        unpressedStyle={isNaked? isRight? {} : styles.transButton1 : styles.button1} 
+        unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
         pressedStyle={isNaked? styles.button1 : {}}
         isAdd={isAdd}
         setCounter={() => setCounter(counter - 1)} 
