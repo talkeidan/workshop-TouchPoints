@@ -105,10 +105,10 @@ React.useEffect(
       <ButtonsMenu resize="cover" source={require("../../assets/images/joey.png")} style={styles.buttonMenu1} title="מבוא" navigate={() => 
         navigation.navigate('Intro', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})}/>
       <LearningDigitsButton onPress={() => navigation.navigate('LearningDigitsMenu', {play: () => setIsPlay(true), pause: () => setIsPlay(false)})} style={styles.buttonMenu2}/>
-      <ButtonsMenu resize="cover" source={require("../../assets/digitsIDIcon.png")} style={styles.buttonMenu3} title = "שיום ספרות" navigate = {() => {
+      <ButtonsMenu resize="cover" source={require("../../assets/images/digitsIDIcon.png")} style={styles.buttonMenu3} title = "שיום ספרות" navigate = {() => {
         setIsPlay(false);
         navigation.navigate('IdentifyDigits')}}/>
-      <ButtonsMenu resize="contain" source={require("../../assets/addTwinsIcon.png")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
+      <ButtonsMenu resize="contain" source={require("../../assets/images/addTwinsIcon.png")} style={styles.buttonMenu4} title = "חיבור תאומים" navigate= {() => {
         setIsPlay(false);
         navigation.navigate('AddingTwins', {arr: shuffleDeck(twins)})}}/>
       <DiffDigitsButton style={styles.buttonMenu5} onPress={() => 

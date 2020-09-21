@@ -16,10 +16,10 @@ const BigSmallButton = ({onPress, style, noText}) => {
     shadowRadius: 20,
     shadowOpacity: 0.5}]}>
             <View style={styles.buttonMenu1}>
-             <Image style={styles.img} resizeMode="cover" source={require("../../assets/bigSmallIcon1.png")}/>
+             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/bigSmallIcon1.png")}/>
             </View>
             <View style={styles.buttonMenu2}>
-             <Image style={styles.img} resizeMode="cover" source={require("../../assets/bigSmallIcon2.png")}/>
+             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/bigSmallIcon2.png")}/>
             </View>
       </BlurView>
       {text}

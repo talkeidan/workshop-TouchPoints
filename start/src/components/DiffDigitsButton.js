@@ -23,7 +23,7 @@ const DiffDigitsButton = ({onPress, style}) => {
     top: "30%",
     position: "absolute"}} noText={true}/>
             <View style={styles.buttonMenu2}>
-             <Image style={styles.img} resizeMode="contain" source={require("../../assets/addIcon.png")}/>
+             <Image style={styles.img} resizeMode="contain" source={require("../../assets/images/addIcon.png")}/>
             </View>
       </BlurView>
       <Text style={styles.text}>ספרות שונות</Text>

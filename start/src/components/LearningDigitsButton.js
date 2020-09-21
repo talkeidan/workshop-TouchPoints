@@ -12,15 +12,15 @@ const LearningDigitsButton = ({onPress, style}) => {
       return <View style={style}>
           <TouchableOpacity onPress={onPress} style={{height: "100%", width: "100%", zIndex: 1}}/>
           <BlurView intensity={90} style={[StyleSheet.absoluteFill, {borderRadius: 20}]}>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid1.png")} style={styles.buttonMenu1}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid2.png")} style={styles.buttonMenu2}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid3.png")} style={styles.buttonMenu3}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid4.png")} style={styles.buttonMenu4}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid5.png")} style={styles.buttonMenu5}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid6.png")} style={styles.buttonMenu6}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid7.png")} style={styles.buttonMenu7}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid8.png")} style={styles.buttonMenu8}/>
-          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/kid9.png")} style={styles.buttonMenu9}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid1.png")} style={styles.buttonMenu1}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid2.png")} style={styles.buttonMenu2}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid3.png")} style={styles.buttonMenu3}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid4.png")} style={styles.buttonMenu4}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid5.png")} style={styles.buttonMenu5}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid6.png")} style={styles.buttonMenu6}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid7.png")} style={styles.buttonMenu7}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid8.png")} style={styles.buttonMenu8}/>
+          <ButtonsMenu disabled={true} resize="contain" source={require("../../assets/images/kid9.png")} style={styles.buttonMenu9}/>
       </BlurView>
       <Text style={styles.text}>לימוד ספרות</Text>
       </View>
