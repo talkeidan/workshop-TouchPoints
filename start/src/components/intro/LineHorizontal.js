@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from "react";
-import { Dimensions, StyleSheet, View, Image, TouchableOpacity} from "react-native";
+import { Dimensions, StyleSheet, View,TouchableOpacity, Image} from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons'
-//import { IconButton } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
+import {} from "react-native-gesture-handler";
 import normalize from "react-native-normalize";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -15,16 +15,25 @@ const LineHorizontal = ({style, count, setCounter, setRewardState, flag}) => {
     useEffect(() => {
       if (count == 0)
       {
+        console.log("in if")
         setRewardState();
       }
     }, [isPress]);
 
-    return <TouchableOpacity style={style/*{position: 'absolute', zIndex: 1, backgroundColor: 'black'}*/} onPress = {() => {
+    return  <View style={StyleSheet.compose(isPress? styles.viewpressed : styles.viewunpressed,style)}>
+      {console.log(count)}
+    <TouchableOpacity onPress = {() => {
       setIsPress(true);
       setCounter();
-    }} disabled={isPress}>
-      <Ionicons name="md-remove" size={200} color={isPress&& flag ? 'green' : 'black'}/>
-      {/* <Image style={style} source = {image}/> */}
-  </TouchableOpacity>
+    }} disabled={isPress} style={{zIndex:1, height:'100%', width:'100%'}}/>
+      </View>
 }
+const styles = StyleSheet.create({
+viewunpressed:{
+  backgroundColor: "black"
+},
+viewpressed:{
+  backgroundColor: "green"
+}
+})
 export default LineHorizontal;

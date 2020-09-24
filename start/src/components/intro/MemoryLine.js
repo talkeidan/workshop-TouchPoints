@@ -1,4 +1,3 @@
-
 import React, {useState} from "react";
 import { Dimensions ,TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -11,83 +10,145 @@ import LineVertical from "./LineVertical";
 import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
 import Point from "../Point";
+import { Video, Audio } from 'expo-av';
+
 
 const windowWidth = Dimensions.get('window').width;
 const isMobile = windowWidth <= 812 && true;
 
-const MemoryLine = () => {
-  const [counter, setCounter] = useState(3);
+const MemoryLine = ({enableNext}) => {
+  const [counter, setCounter] = useState(9);
   const [rewardState, setRewardState] = useState('rest');
 
-
   return <View style={styles.mainContainer}>
-  <ImageBackground style={styles.bgimage} source={require("../../../assets/swing.jpg")} resizeMode="contain">
       <Confetti rewardState={rewardState}/>
-      <Text style = {styles.Text}>לחצו על הנקודות המתאימות  </Text>
-      <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/>
-    <Point unpressedStyle={styles.button2} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/>
-    <Point unpressedStyle={styles.button3} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => setRewardState('reward')} count={counter}/>
-  </ImageBackground>
+      <ImageBackground style={styles.bgimage1} source={rewardState == 'reward' ? require("../../../assets/LineSwing2.png") : require("../../../assets/LineSwing.png")} resizeMode="contain">
+      <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button2} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button3} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+     </ImageBackground>
+     <ImageBackground style={styles.bgimage2} source={rewardState == 'reward' ? require("../../../assets/LineSwing2.png") : require("../../../assets/LineSwing.png")} resizeMode="contain">
+      <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button2} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button3} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+     </ImageBackground>
+     <ImageBackground style={styles.bgimage3} source={rewardState == 'reward' ? require("../../../assets/LineSwing2.png") : require("../../../assets/LineSwing.png")} resizeMode="contain">
+      <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button2} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+      <Point unpressedStyle={styles.button3} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
+        if (enableNext != null) {
+          enableNext();
+        }
+        setRewardState('reward')}} count={counter}/>
+     </ImageBackground>
 </View>
 }
 
 const styles = StyleSheet.create({
 mainContainer: {
-width: '100%',
-display: 'flex',
-justifyContent: 'center',
-alignItems: 'center',
+  width: '100%',
+  flex:1,
 },
-bgimage: {
-position: "relative",
-//alignSelf: "center",
-//justifyContent: "center",
-//top: normalize(10),
-marginTop: isMobile ? '2%' : '6%',
-//padding: "5%",
-borderRadius: 20,
-height: hp('80%'),
-width: wp('60%'),
-//flex: 1,
-shadowColor: "#36393d",
-shadowOffset: { width: 1 },
-//elevation: 20,
-shadowRadius: 5,
-shadowOpacity: 1,
-direction: 'ltr',
+bgimage1: {
+  position: "absolute",
+  marginTop: isMobile ? '2%' : '6%',
+  borderRadius: 20,
+  height: isMobile? "70%" : "70%",
+  width:  isMobile? "60%" : "60%",
+  top:isMobile? "3%": "3%",
+  left:isMobile?"10%":"10%",
+  shadowColor: "#36393d",
+  shadowOffset: { width: 1 },
+  shadowRadius: 5,
+  shadowOpacity: 1,
+  direction: 'ltr',
 },
-Text: {
-  fontSize:15,
-  color: "#002266", 
-  fontWeight: 'bold'
+bgimage2: {
+  position: "absolute",
+  marginTop: isMobile ? '2%' : '6%',
+  borderRadius: 20,
+  height: isMobile? "70%" : "70%",
+  width:  isMobile? "60%" : "60%",
+  top:isMobile? "0%": "0%",
+  left:isMobile?"60%":"60%",
+  shadowColor: "#36393d",
+  shadowOffset: { width: 1 },
+  shadowRadius: 5,
+  shadowOpacity: 1,
+  direction: 'ltr',
+},
+bgimage3: {
+  position: "absolute",
+  marginTop: isMobile ? '2%' : '6%',
+  borderRadius: 20,
+  height: isMobile? "70%" : "70%",
+  width:  isMobile? "60%" : "60%",
+  top:isMobile? "40%": "40%",
+  left:isMobile?"50%":"50%",
+  shadowColor: "#36393d",
+  shadowOffset: { width: 1 },
+  shadowRadius: 5,
+  shadowOpacity: 1,
+  direction: 'ltr',
 },
 button1: {
 position: "absolute",
 backgroundColor: "black",
 borderRadius: normalize(35),
-left: isMobile ? '80%' : '6%',
-top: isMobile ? '65%' : '18%',
-width: isMobile ? 40 : 75,
-height: isMobile ? 40 : 75,
+left: isMobile ? '4%' : '3%',
+top: isMobile ? '44%' : '41%',
+width: isMobile ? 31 : 50,
+height: isMobile ? 31 : 50,
 },
-
 button2: {
 position: "absolute",
 backgroundColor: "black",
 borderRadius: normalize(35),
-left: isMobile ? '45%' : '6%',
-top: isMobile ? '65%' : '18%',
-width: isMobile ? 40 : 75,
-height: isMobile ? 40 : 75,
+left: isMobile ? '27%' : '27%',
+top: isMobile ? '44%' : '41%',
+width: isMobile ? 31 : 50,
+height: isMobile ? 31 : 50,
 },
 button3: {
 position: "absolute",
 backgroundColor: "black",
 borderRadius: normalize(35),
-left: isMobile ? '7%' : '6%',
-top: isMobile ? '65%' : '18%',
-width: isMobile ? 40 : 75,
-height: isMobile ? 40 : 75,
+left: isMobile ? '50%' : '49%',
+top: isMobile ? '44%' : '41%',
+width: isMobile ? 31 : 50,
+height: isMobile ? 31 : 50,
 }
 });
 
