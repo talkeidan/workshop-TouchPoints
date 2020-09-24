@@ -4,6 +4,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import Confetti from "../animations/Confetti";
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -22,6 +23,12 @@ const Six = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
    return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
           isNaked ? rewardState == 'reward' ? require("../../assets/kid6.png") : require("../../assets/number6.png") : isAdd ? require("../../assets/number6.png") : rewardState == 'reward' ? require("../../assets/kid6.png") : require("../../assets/kid-point6.png")} resizeMode="contain">
     <Confetti rewardState={rewardState}/>
+    <Video
+                source={require("../../assets/sounds/6.mp4")}
+                shouldPlay={rewardState=='reward'}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls={false}/>
     <Point 
         unpressedStyle={isNaked? styles.transButton1 : styles.button1} 
         pressedStyle={isNaked? styles.button1 : {}}

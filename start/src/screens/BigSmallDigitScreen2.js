@@ -5,6 +5,8 @@ import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import Confetti from "../animations/Confetti";
 import Crocodiles from "../components/Crocodiles";
+import { Video, Audio } from 'expo-av';
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
@@ -16,6 +18,12 @@ const BigSmallDigitScreen2 = ({navigation, route}) => {
 
     return <ImageBackground style={styles.bgimage} source={require("../../assets/lake.png")} resizeMode="stretch"> 
         <Confetti rewardState={rewardState}/>
+        {<Video
+                source={require("../../assets/sounds/crocs-stage2.mp4")}
+                shouldPlay={counter==0}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls ={false}/>}
         <HomeButton style={{top: "1.5%", left: "1%"}} onPress={() => {navigation.navigate('Home')}}/>
         <View style={styles.addContainerLeft}>
          {route.params.arr[counter].first}

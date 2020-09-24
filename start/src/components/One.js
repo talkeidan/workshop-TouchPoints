@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, ImageBackground, Dimensions} from "react-nativ
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import normalize from "react-native-normalize";
 import Point from "./Point";
+import { Video } from 'expo-av';
 import Confetti from "../animations/Confetti";
 
 const windowWidth = Dimensions.get('window').width;
@@ -21,6 +22,12 @@ const One = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
     return <ImageBackground style={isAdd? styles.bgimageAdd : styles.bgimage} source={
             isNaked ? rewardState == 'reward' ? require("../../assets/kid1.png") : require("../../assets/number1.png") : isAdd ? require("../../assets/number1.png") : rewardState == 'reward' ? require("../../assets/kid1.png") : require("../../assets/kid-point1.png")} resizeMode="contain">
             <Confetti rewardState={rewardState}/>
+            <Video
+                source={require("../../assets/sounds/1.mp4")}
+                shouldPlay={rewardState=='reward'}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls={false}/>
             <Point 
             unpressedStyle={isNaked? styles.transButton : styles.button} 
             pressedStyle={isNaked? styles.button : {}}

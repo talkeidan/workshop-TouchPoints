@@ -7,6 +7,7 @@ import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import MemoryCircle from "../components/intro/MemoryCircle";
 import MemoryLine from "../components/intro/MemoryLine";
+import { Video } from 'expo-av';
 
 const patterns = [
    { name: <MemoryCircle></MemoryCircle>},
