@@ -210,75 +210,67 @@ const styles = StyleSheet.create({
       },
       transButton1: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "20%"
+        left: "28%"
       },
       transButton2: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "22%"
+        left: "30%"
       }, 
       transButton3: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "70%"
+        left: "75%"
       },
       transButton4: {
         position: "absolute",
-       // backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "68%"
+        left: "73%"
       },
       transButton5: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "20%"
+        left: "28%"
       },
       transButton6: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "22%"
+        left: "29%"
       },
       transButton7: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "70%"
+        left: "77%"
       },
       transButton8: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "68%"
+        left: "75%"
       },
       addContainer: {
         position: "absolute",
