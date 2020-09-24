@@ -2,10 +2,15 @@ import React, {useState} from "react";
 import {View,  Image, StyleSheet, Dimensions} from "react-native";
 import {TouchableOpacity} from "react-native-gesture-handler";
 import * as Animatable from 'react-native-animatable';
+import { Video, Audio } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
+// const rewardSounds = [require("../../assets/sounds/yofi.mp4"),
+// require("../../assets/sounds/kol-hakavod.mp4"),
+// require("../../assets/sounds/yafeh-meod.mp4"),
+// require("../../assets/sounds/metzuyan.mp4")]
 
 export default class OptionDigit extends React.Component 
 {
@@ -14,6 +19,13 @@ export default class OptionDigit extends React.Component
     shake = () => {
          if (this.props.result == this.props.value) {
              this.props.setRewardState();
+             
+            //  <Video
+            //     source={Math.floor(Math.random() * 4)}
+            //     shouldPlay={true}
+            //     isLooping={false}
+            //     volume={0.1}
+            //     useNativeControls ={false}/>
          }
          else {
              this.view.shake(800);
