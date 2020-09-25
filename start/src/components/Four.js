@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import { TouchableWithoutFeedback, Button, Dimensions, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {  Dimensions, StyleSheet, ImageBackground } from "react-native";
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import Confetti from "../animations/Confetti";
@@ -12,7 +11,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const Four = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
   const [counter, setCounter] = useState(4);
-  const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
   if (disabled) {
     return <ImageBackground style={styles.bgimageAdd} source={require("../../assets/number4.png")} resizeMode="contain">

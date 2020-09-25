@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { Dimensions, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
+import React, {useState} from "react";
+import { Dimensions, StyleSheet, ImageBackground} from "react-native";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import CirclesId from "../components/intro/CirclesId";
@@ -9,7 +9,6 @@ import LinesAndCirclesId from "../components/intro/LinesAndCirclesId";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height - 60;
 
-
 const CirclesLinesIdScreen = ({navigation}) => {
     const [counter, setCounter] = useState(0);
     const [isDisabled, setIsDisabled] = useState(true);
@@ -18,8 +17,8 @@ const CirclesLinesIdScreen = ({navigation}) => {
       { name: <LinesId enableNext={() => setIsDisabled(false)}></LinesId>},
       { name: <CirclesId enableNext={() => setIsDisabled(false)}></CirclesId>},
       { name: <LinesAndCirclesId enableNext={() => setIsDisabled(false)}></LinesAndCirclesId>},
-   ];   
-
+   ]; 
+   
     return <ImageBackground style={styles.bgimage} source={require("../../assets/playground.jpg")} resizeMode="cover"> 
         <HomeButton onPress={() => {navigation.navigate('Home')}}/>
         {patterns[counter].name}

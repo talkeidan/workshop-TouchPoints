@@ -1,5 +1,5 @@
-import React, {setProps, useState, useEffect} from "react";
-import { Button, StyleSheet, View,TouchableOpacity, ImageBackground} from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, ImageBackground} from "react-native";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import Hint from "../components/Hint";

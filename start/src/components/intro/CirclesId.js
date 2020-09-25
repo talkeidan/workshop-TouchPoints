@@ -1,39 +1,58 @@
 import React, {useState} from "react";
-import { Dimensions, Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import RewardsComponent from 'react-native-rewards';
-import normalize from "react-native-normalize";
-import { render } from "react-dom";
-import { color } from "react-native-reanimated";
-import LineHorizontal from "./LineHorizontal";
+import { Dimensions, StyleSheet, View} from "react-native";
 import LineVertical from "./LineVertical";
 import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
 import WrongLineHorizontal from "./WrongLineHorizontal";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
+const rewardSounds = [<Video
+  source={require("../../../assets/sounds/yofi.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>, 
+  <Video
+  source={require("../../../assets/sounds/kol-hakavod.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/yafeh-meod.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/metzuyan.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>
+];
 
 const CirclesId = ({enableNext}) => {
   const [counter, setCounter] = useState(2);
   const [rewardState, setRewardState] = useState('rest');
+  const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
   return <View style={{height: windowHeight, width: windowWidth, position: 'relative'}}>
   <Confetti rewardState={rewardState}/>
-  {<Video
+  {rewardState=='reward' ? sound : null}
+  <Video
                 source={require("../../../assets/sounds/touch-circles.mp4")}
-                shouldPlay={counter==3}
+                shouldPlay={true}
                 isLooping={false}
                 volume={0.1}
-                useNativeControls ={false}/>}
+                useNativeControls ={false}/>
    <WrongLineHorizontal style={styles.LineHorizontal1}/>
    <WrongLineHorizontal style={styles.LineHorizontal2}/>
    <WrongLineHorizontal style={styles.LineHorizontal3}/>
    <LineVertical style={styles.LineVertical1}/>
    <LineVertical style={styles.LineVertical2}/>
-   <Circle style={styles.Circle1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
+   <Circle rewardState={rewardState} style={styles.Circle1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
      if (enableNext != null) {
       enableNext();
     }

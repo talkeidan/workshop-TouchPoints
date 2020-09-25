@@ -1,7 +1,7 @@
 import React from "react";
-import {View,  Image, StyleSheet, TouchableOpacity, Dimensions} from "react-native";
+import {View, StyleSheet, Dimensions} from "react-native";
 import OptionDigit from "./OptionDigit";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

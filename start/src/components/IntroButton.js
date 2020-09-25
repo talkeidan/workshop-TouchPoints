@@ -1,26 +1,26 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity, Image, Text, Dimensions} from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image, Dimensions} from "react-native";
 import { BlurView } from 'expo-blur';
 import normalize from "react-native-normalize";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
 
-const BigSmallButton = ({onPress, style, noText}) => {
-    const text = noText? null : <Text style={styles.text}>גדול קטן</Text>;
-      return <View style={style}>
+const IntroButton = ({noText, onPress, style}) => {
+    return <View style={style}>
           <TouchableOpacity onPress={onPress} style={{height: "100%", width: "100%", zIndex: 1}}/>
-          <BlurView intensity={90} style={[StyleSheet.absoluteFill, {borderRadius: normalize(5), shadowColor: "#36393d", shadowOffset: { width: 10 },
-    shadowRadius: 20,
-    shadowOpacity: 0.5}]}>
-            <View style={styles.buttonMenu1}>
-             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/bigSmallIcon1.png")}/>
+          <BlurView intensity={90} style={[StyleSheet.absoluteFill, {borderRadius: 20}]}>
+          <View style={styles.buttonMenu1}>
+             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/linesCirclesIDIcon.png")}/>
             </View>
             <View style={styles.buttonMenu2}>
-             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/bigSmallIcon2.png")}/>
+             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/circlesLineShapesIcon.png")}/>
+            </View>
+            <View style={styles.buttonMenu3}>
+             <Image style={styles.img} resizeMode="cover" source={require("../../assets/images/memAidIcon.png")}/>
             </View>
       </BlurView>
-      {text}
+      <Text style={styles.text}>ספרות שונות</Text>
       </View>
   };
   
@@ -31,10 +31,9 @@ const BigSmallButton = ({onPress, style, noText}) => {
         borderRadius: normalize(5),
         zIndex: 1,
         shadowOffset: { width: 0.5 },
-        shadowRadius: 5,
         shadowOpacity: 0.5,
         left: "5%", 
-        top: "30%",
+        top: "8%",
         position: "absolute"
       },
       buttonMenu2: {
@@ -43,16 +42,26 @@ const BigSmallButton = ({onPress, style, noText}) => {
         borderRadius: normalize(5),
         zIndex: 1,
         shadowOffset: { width: 0.5 },
-        shadowRadius: 5,
         shadowOpacity: 0.5,
         right: "5%", 
-        top: "30%",
+        top: "8%",
         position: "absolute"
       },
     img: {
-        height: "100%", 
-        width: "100%", 
-        borderRadius: normalize(5)
+        height: "100%",
+        width: "100%",
+        borderRadius: normalize(5),
+    },
+    buttonMenu3: {
+        aspectRatio: 1 / 1,
+        height: '40%',
+        borderRadius: normalize(5),
+        zIndex: 1,
+        shadowOffset: { width: 0.5 },
+        shadowOpacity: 0.5,
+        right: "30%", 
+        bottom: "6%",
+        position: "absolute"
     },
     bgimage: {
       position: "relative",
@@ -65,4 +74,4 @@ const BigSmallButton = ({onPress, style, noText}) => {
     }
   });
   
-  export default BigSmallButton;
+  export default IntroButton;

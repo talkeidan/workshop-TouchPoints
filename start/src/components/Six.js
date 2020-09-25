@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, View, Dimensions, ImageBackground } from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { StyleSheet, Dimensions, ImageBackground } from "react-native";
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import Confetti from "../animations/Confetti";
@@ -12,7 +11,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const Six = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
   const [counter, setCounter] = useState(6);
-  const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
       
   if (disabled) {
@@ -169,7 +167,6 @@ const styles = StyleSheet.create({
       },
       transButton1: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -178,7 +175,6 @@ const styles = StyleSheet.create({
       },
       transButton2: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -187,7 +183,6 @@ const styles = StyleSheet.create({
       }, 
       transButton3: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -196,7 +191,6 @@ const styles = StyleSheet.create({
       },
       transButton4: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -205,7 +199,6 @@ const styles = StyleSheet.create({
       },
       transButton5: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -214,7 +207,6 @@ const styles = StyleSheet.create({
       },
       transButton6: {
         position: "absolute",
-        //backgroundColor: "yellow",
         aspectRatio: 1 / 1,
         height: "8%",
         borderRadius: normalize(35),
@@ -231,7 +223,6 @@ const styles = StyleSheet.create({
         left: isMobile? "52%" : "54%",
     },
     bgimageAdd: {
-      //margin: "2%",
       aspectRatio: 1/1,
       shadowColor: "#36393d",
       marginBottom: "10%"

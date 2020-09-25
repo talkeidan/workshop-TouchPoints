@@ -1,11 +1,8 @@
-import React, {useState, useEffect} from "react";
-import { StyleSheet, View, Dimensions, Image, ImageBackground } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, Dimensions, Image } from "react-native";
 import Draggable from 'react-native-draggable';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import normalize from "react-native-normalize";
-import Point from "./Point";
 import { Video } from 'expo-av';
-import Confetti from "../animations/Confetti";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

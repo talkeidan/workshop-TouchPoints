@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, TouchableOpacity,ImageBackground, Dimensions} from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, ImageBackground, Dimensions} from "react-native";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import Confetti from "../animations/Confetti";
 import Three from "../components/Three";
 import NumbersLine from "../components/NumbersLine";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

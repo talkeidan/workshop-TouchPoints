@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, View, Dimensions, ImageBackground } from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { StyleSheet, Dimensions, ImageBackground } from "react-native";
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import Confetti from "../animations/Confetti";
@@ -12,7 +11,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const Eight = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
   const [counter, setCounter] = useState(8);
-  const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
       
     if (disabled) {
@@ -121,12 +119,10 @@ const Eight = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
 }
 
 const styles = StyleSheet.create({
-
     bgimage:{
       flex: 1,
       position: "relative",
       top: "5%",
-      //marginTop: "2%",
       padding: "5%",
       height: "100%",
       aspectRatio: 1/1,

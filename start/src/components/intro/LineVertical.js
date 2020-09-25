@@ -1,7 +1,6 @@
-import React,{useState} from "react";
-import { Dimensions,Text, StyleSheet, View, Image, TouchableOpacity} from "react-native";
+import React from "react";
+import { Dimensions, StyleSheet, TouchableOpacity} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import normalize from "react-native-normalize";
 import * as Animatable from 'react-native-animatable';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

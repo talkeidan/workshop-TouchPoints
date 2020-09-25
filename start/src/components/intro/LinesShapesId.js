@@ -1,27 +1,49 @@
 import React, {useState} from "react";
-import { Dimensions,TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import RewardsComponent from 'react-native-rewards';
-import {TouchableOpacity} from "react-native-gesture-handler";
-import normalize from "react-native-normalize";
-import { render } from "react-dom";
-import { color } from "react-native-reanimated";
+import { Dimensions, StyleSheet, View, ImageBackground} from "react-native";
 import LineHorizontal from "./LineHorizontal";
-import LineVertical from "./LineVertical";
-import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
-import { Video, Audio } from 'expo-av';
-
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const isMobile = windowWidth <= 812 && true;
+const rewardSounds = [<Video
+  source={require("../../../assets/sounds/yofi.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>, 
+  <Video
+  source={require("../../../assets/sounds/kol-hakavod.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/yafeh-meod.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/metzuyan.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>
+];
 
 const LinesShapesId = ({enableNext}) => {
   const [counter, setCounter] = useState(5);
   const [rewardState, setRewardState] = useState('rest');
+  const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
   return <View style={styles.mainContainer}>
            <Confetti rewardState={rewardState}/>
+          {rewardState=='reward' ? sound : null}
+           <Video
+                source={require("../../../assets/sounds/touch-lines.mp4")}
+                shouldPlay={true}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls ={false}/>
            <ImageBackground style={styles.bgimagewindow} source={require("../../../assets/window.png")} resizeMode="contain">
            <LineHorizontal style={styles.LineHorizontal1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {

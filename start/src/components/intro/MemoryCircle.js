@@ -1,26 +1,50 @@
 import React, {useState} from "react";
-import { Dimensions ,TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import RewardsComponent from 'react-native-rewards';
+import { Dimensions, StyleSheet, View, ImageBackground } from "react-native";
 import normalize from "react-native-normalize";
-import { render } from "react-dom";
-import { color } from "react-native-reanimated";
-import LineHorizontal from "./LineHorizontal";
-import LineVertical from "./LineVertical";
-import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
 import Point from "../Point";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const isMobile = windowWidth <= 812 && true;
+const rewardSounds = [<Video
+  source={require("../../../assets/sounds/yofi.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>, 
+  <Video
+  source={require("../../../assets/sounds/kol-hakavod.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/yafeh-meod.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/metzuyan.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>
+];
 
 const MemoryCircle = ({enableNext}) => { //צריך לשנות - להוריד את העיגול ולהוסיף נקודות
   const [counter, setCounter] = useState(8);
   const [rewardState, setRewardState] = useState('rest');
+  const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
 return <View style={styles.mainContainer}>
         <Confetti rewardState={rewardState}/>
+        {rewardState=='reward' ? sound : null}
+        <Video
+                source={require("../../../assets/sounds/circle-mem-aid.mp4")}
+                shouldPlay={true}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls ={false}/>
         <ImageBackground style={styles.bgimage1} source={rewardState == 'reward' ? require("../../../assets/CircleHead2.png") : require("../../../assets/CircleHead.png")} resizeMode="contain">
           <Point unpressedStyle={styles.button1} setCounter={() => setCounter(counter - 1)} setRewardState={(rewardState) => {
             if (enableNext != null) {

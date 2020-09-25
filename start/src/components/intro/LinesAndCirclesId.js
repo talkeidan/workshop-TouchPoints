@@ -1,27 +1,52 @@
 import React, {useState} from "react";
-import {Dimensions,TouchableWithoutFeedback, Button, Text, StyleSheet, View, Image, ImageBackground, TouchableOpacity} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import RewardsComponent from 'react-native-rewards';
-import normalize from "react-native-normalize";
-import { render } from "react-dom";
-import { color } from "react-native-reanimated";
+import {Dimensions, StyleSheet, View } from "react-native";
 import LineHorizontal from "./LineHorizontal";
 import LineVertical from "./LineVertical";
 import Circle from "./Circle";
 import Confetti from "../../animations/Confetti";
-import WrongLineHorizontal from "./WrongLineHorizontal";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
+const rewardSounds = [<Video
+  source={require("../../../assets/sounds/yofi.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>, 
+  <Video
+  source={require("../../../assets/sounds/kol-hakavod.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/yafeh-meod.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/metzuyan.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>
+];
 
 const LinesAndCirclesId = ({enableNext}) => {
   const [counter, setCounter] = useState(5);
   const [rewardState, setRewardState] = useState('rest');
+  const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
   return <View style={{alignItems: 'center', display: 'flex',height: '100%', width: '100%', position: 'relative'}}>
           <Confetti rewardState={rewardState}/>
+          {rewardState=='reward' ? sound : null}
+          <Video
+                source={require("../../../assets/sounds/yofi.mp4")}
+                shouldPlay={true}
+                isLooping={false}
+                volume={0.1}
+                useNativeControls ={false}/>
            <LineHorizontal style={styles.LineHorizontal1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {
               enableNext();
@@ -39,12 +64,12 @@ const LinesAndCirclesId = ({enableNext}) => {
              setRewardState('reward')}} flag = {true}/>
            <LineVertical style={styles.LineVertical1}/>
            <LineVertical style={styles.LineVertical2}/>
-           <Circle style={styles.Circle1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
+           <Circle rewardState={rewardState} style={styles.Circle1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {
               enableNext();
             }
              setRewardState('reward')}} flag = {true}/>
-           <Circle style={styles.Circle2} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
+           <Circle rewardState={rewardState} style={styles.Circle2} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {
               enableNext();
             }

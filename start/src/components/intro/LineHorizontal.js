@@ -1,9 +1,5 @@
-import React,{useEffect, useState} from "react";
-import { Dimensions, StyleSheet, View,TouchableOpacity, Image} from "react-native";
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { Ionicons } from "@expo/vector-icons";
-import {} from "react-native-gesture-handler";
-import normalize from "react-native-normalize";
+import React, {useEffect, useState} from "react";
+import { Dimensions, StyleSheet, View,TouchableOpacity} from "react-native";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;

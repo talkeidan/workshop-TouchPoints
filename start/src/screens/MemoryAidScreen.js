@@ -1,15 +1,10 @@
-import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, TouchableOpacity,ImageBackground, Image} from "react-native";
-import ButtonsMenu from "../components/HomeButton"
-import { Col, Row, Grid } from "react-native-easy-grid";
+import React, {useState} from "react";
+import { StyleSheet, ImageBackground} from "react-native";
 import normalize from "react-native-normalize";
 import HomeButton from "../components/HomeButton";
 import NextButton from "../components/NextButton";
 import MemoryCircle from "../components/intro/MemoryCircle";
 import MemoryLine from "../components/intro/MemoryLine";
-import { Video } from 'expo-av';
-
-
 
 const MemoryAidScreen = ({navigation}) => {
     const [counter, setCounter] = useState(0);

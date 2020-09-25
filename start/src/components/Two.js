@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
       },
       transButton1: {
         position: "absolute",
-        //backgroundColor: "yellow",
         borderRadius: normalize(35),
         left: '13%',
         top: '18%',
@@ -106,7 +105,6 @@ const styles = StyleSheet.create({
       },
       transButton2: {
         position: "absolute",
-        //backgroundColor: "yellow",
         borderRadius: normalize(35),
         left: '15.5%',
         top: "69%",

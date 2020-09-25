@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useRef} from "react";
-import { StyleSheet, View, Image, ImageBackground, Dimensions} from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import React, {useState} from "react";
+import { StyleSheet, ImageBackground, Dimensions} from "react-native";
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import { Video } from 'expo-av';
@@ -12,7 +11,6 @@ const isMobile = windowWidth <= 812 && true;
 
 const One = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
     const [counter, setCounter] = useState(1);
-    const [ isPress, setIsPress ] = useState(false);
     const [rewardState, setRewardState] = useState('rest');
     
     if (disabled) {

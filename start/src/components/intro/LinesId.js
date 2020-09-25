@@ -4,26 +4,49 @@ import LineHorizontal from "./LineHorizontal";
 import LineVertical from "./LineVertical";
 import Confetti from "../../animations/Confetti";
 import WrongCircle from "./WrongCircle";
-import normalize from "react-native-normalize";
-import { Video, Audio } from 'expo-av';
+import { Video } from 'expo-av';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isMobile = windowWidth <= 812 && true;
-
+const rewardSounds = [<Video
+  source={require("../../../assets/sounds/yofi.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>, 
+  <Video
+  source={require("../../../assets/sounds/kol-hakavod.mp4")}
+  shouldPlay={true}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/yafeh-meod.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>,
+  <Video
+  source={require("../../../assets/sounds/metzuyan.mp4")}
+  shouldPlay={true}
+  isLooping={false}
+  volume={0.1}
+  useNativeControls ={false}/>
+];
 
 const LinesId = ({enableNext}) => {
   const [counter, setCounter] = useState(3);
   const [rewardState, setRewardState] = useState('rest');
+  const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
     return <View style={{height: windowHeight, width: windowWidth, position: 'relative'}}>
           <Confetti rewardState={rewardState}/>
-          {<Video
+          {rewardState=='reward' ? sound : null}
+          <Video
                 source={require("../../../assets/sounds/touch-lines.mp4")}
                 shouldPlay={counter==3}
                 isLooping={false}
                 volume={0.1}
-                useNativeControls ={false}/>}
+                useNativeControls ={false}/>
            <LineHorizontal style={styles.LineHorizontal1} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {
               enableNext();

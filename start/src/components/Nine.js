@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, View, Dimensions, ImageBackground } from "react-native";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { StyleSheet, Dimensions, ImageBackground } from "react-native";
 import normalize from "react-native-normalize";
 import Point from "./Point";
 import Confetti from "../animations/Confetti";
@@ -12,8 +11,8 @@ const isMobile = windowWidth <= 812 && true;
 
 const Nine = ({disabled, isRight, isAdd, onPress, isNaked, enableNext}) => {
   const [counter, setCounter] = useState(9);
-  const [ isPress, setIsPress ] = useState(false);
   const [rewardState, setRewardState] = useState('rest');
+  
   if (disabled) {
     return <ImageBackground style={styles.bgimageAdd} source={require("../../assets/number9.png")} resizeMode="contain">
 </ImageBackground>
