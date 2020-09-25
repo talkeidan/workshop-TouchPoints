@@ -11,13 +11,11 @@ const LineHorizontal = ({style, count, setCounter, setRewardState, flag}) => {
     useEffect(() => {
       if (count == 0)
       {
-        console.log("in if")
         setRewardState();
       }
     }, [isPress]);
 
     return  <View style={StyleSheet.compose(isPress? styles.viewpressed : styles.viewunpressed,style)}>
-      {console.log(count)}
     <TouchableOpacity onPress = {() => {
       setIsPress(true);
       setCounter();
