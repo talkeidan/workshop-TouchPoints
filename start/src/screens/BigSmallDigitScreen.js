@@ -72,7 +72,7 @@ addContainerLeft: {
   width: isMobile? "30%" : "42%",
   justifyContent: "center",
   top: isMobile? "15%" : "15%",
-  left: isMobile? "0%" : "0%",
+  left: isMobile? "0%" : "-5%",
   shadowColor: "#36393d",
   shadowOffset: { width: 1 },
   shadowRadius: 5,
