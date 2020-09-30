@@ -20,6 +20,9 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "package": "com.TalAndShira.touchpoints"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
