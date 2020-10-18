@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: isMobile? "34%" : "30%"
+        left: "23%"
       },
       addButton2: {
         position: "absolute",
@@ -284,7 +284,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: isMobile? "36%" : "31%"
+        left: "25%"
       }, 
       addButton3: {
         position: "absolute",
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: isMobile? "81%" : "77%"
+        left: "71%"
       },
       addButton4: {
         position: "absolute",
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: isMobile? "79%" : "75%"
+        left: "69%"
       },
       addButton5: {
         position: "absolute",
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: isMobile? "33%" : "28%"
+        left: "22%"
       },
       addButton6: {
         position: "absolute",
@@ -320,7 +320,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: isMobile? "35%" : "30%"
+        left: "24%"
       },
       addButton7: {
         position: "absolute",
@@ -329,7 +329,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "66%",
-        left: isMobile? "82%" : "78%"
+        left: "72%"
       },
       addButton8: {
         position: "absolute",
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "74%",
-        left: isMobile? "80%" : "76%"
+        left: "70%"
       },
       addContainer: {
         position: "absolute",
