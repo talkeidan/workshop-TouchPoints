@@ -31,7 +31,7 @@ const rewardSounds = [<Video
 ];
 
 const LinesShapesId = ({enableNext}) => {
-  const [counter, setCounter] = useState(5);
+  const [counter, setCounter] = useState(6);
   const [rewardState, setRewardState] = useState('rest');
   const sound = rewardSounds[Math.floor(Math.random() * 5)]
 
@@ -64,6 +64,11 @@ const LinesShapesId = ({enableNext}) => {
            
            <ImageBackground style={styles.bgimagehouse} source={ require("../../../assets/house.png")} resizeMode="contain">
            <LineHorizontal style={styles.LineHorizontal4} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
+             if (enableNext != null) {
+              enableNext();
+            }
+             setRewardState('reward')}} flag = {true}/>
+             <LineHorizontal style={styles.LineHorizontal6} count={counter} setCounter={() => setCounter(counter-1)} setRewardState={() => {
              if (enableNext != null) {
               enableNext();
             }
@@ -129,18 +134,26 @@ LineHorizontal3: {
 },
 LineHorizontal4: {
   position: "absolute",
-  width: isMobile? "41%" : "41%",
-  height: isMobile? "2%" : "2%",
-  top: isMobile? "77%" : "77%",
-  left: isMobile? "27%" : "27%",
+  width: "41%",
+  height: "2%",
+  top: "77%",
+  left: "27%",
   zIndex:1,
 },
 LineHorizontal5: {
   position: "absolute",
-  width: isMobile? "41%" : "41%",
-  height: isMobile? "2%" : "2%",
-  top: isMobile? "39%" : "39%",
-  left: isMobile? "27%" : "27%",
+  width: "41%",
+  height: "2%",
+  top: "39%",
+  left: "27%",
+  zIndex:1,
+},
+LineHorizontal6: {
+  position: "absolute",
+  width: "8.4%",
+  height: "2%",
+  top: "58%",
+  left: "32.9%",
   zIndex:1,
 },
 });

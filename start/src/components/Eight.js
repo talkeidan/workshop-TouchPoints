@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "34%"
+        left: isMobile? "34%" : "30%"
       },
       button2: {
         position: "absolute",
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "36%"
+        left: isMobile? "36%" : "31%"
       }, 
       button3: {
         position: "absolute",
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "81%"
+        left: isMobile? "81%" : "77%"
       },
       button4: {
         position: "absolute",
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "79%"
+        left: isMobile? "79%" : "75%"
       },
       button5: {
         position: "absolute",
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "34%"
+        left: isMobile? "33%" : "28%"
       },
        button6: {
         position: "absolute",
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "35%"
+        left: isMobile? "35%" : "30%"
       },
       button7: {
         position: "absolute",
@@ -192,8 +192,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "65%",
-        left: "83%"
+        top: "66%",
+        left: isMobile? "82%" : "78%"
       },
       button8: {
         position: "absolute",
@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "73%",
-        left: "81%"
+        top: "74%",
+        left: isMobile? "80%" : "76%"
       },
       transButton1: {
         position: "absolute",
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "34%"
+        left: isMobile? "34%" :"30%"
       },
       transButton2: {
         position: "absolute",
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "36%"
+        left: isMobile? "36%" :"31%"
       }, 
       transButton3: {
         position: "absolute",
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "81%"
+        left: isMobile? "81%" : "77%"
       },
       transButton4: {
         position: "absolute",
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "79%"
+        left: isMobile? "79%" : "75%"
       },
       transButton5: {
         position: "absolute",
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "34%"
+        left: isMobile? "33%" : "28%"
       },
       transButton6: {
         position: "absolute",
@@ -250,50 +250,50 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "35%"
+        left: isMobile? "35%" : "30%"
       },
       transButton7: {
         position: "absolute",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "65%",
-        left: "83%"
+        top: "66%",
+        left: isMobile? "82%" : "78%"
       },
       transButton8: {
         position: "absolute",
         aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "73%",
-        left: "81%"
+        top: "74%",
+        left: isMobile? "80%" : "76%"
       },
       addButton1: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "22%"
+        left: isMobile? "34%" : "30%"
       },
       addButton2: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "24%"
+        left: isMobile? "36%" : "31%"
       }, 
       addButton3: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "23%",
-        left: "69%"
+        left: isMobile? "81%" : "77%"
       },
       addButton4: {
         position: "absolute",
@@ -302,45 +302,43 @@ const styles = StyleSheet.create({
         height: '10%',
         borderRadius: normalize(35),
         top: "31%",
-        left: "67%"
+        left: isMobile? "79%" : "75%"
       },
       addButton5: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "65%",
-        left: "22%"
+        left: isMobile? "33%" : "28%"
       },
       addButton6: {
         position: "absolute",
-        
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
-
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
         top: "73%",
-        left: "23%"
+        left: isMobile? "35%" : "30%"
       },
       addButton7: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "65%",
-        left: "71%"
+        top: "66%",
+        left: isMobile? "82%" : "78%"
       },
       addButton8: {
         position: "absolute",
-        aspectRatio: 1 / 1,
         backgroundColor: "yellow",
+        aspectRatio: 1 / 1,
         height: '10%',
         borderRadius: normalize(35),
-        top: "73%",
-        left: "69%"
+        top: "74%",
+        left: isMobile? "80%" : "76%"
       },
       addContainer: {
         position: "absolute",

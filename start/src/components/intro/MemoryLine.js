@@ -153,7 +153,7 @@ borderRadius: normalize(35),
 left: isMobile ? '3%' : '3%',
 top: isMobile ? '44%' : '41%',
 aspectRatio: 1 / 1,
-height: '15%',
+height: '10%',
 },
 button2: {
 position: "absolute",
@@ -162,7 +162,7 @@ borderRadius: normalize(35),
 left: isMobile ? '27%' : '27%',
 top: isMobile ? '44%' : '41%',
 aspectRatio: 1 / 1,
-height: '15%',
+height: '10%',
 },
 button3: {
 position: "absolute",
@@ -171,7 +171,7 @@ borderRadius: normalize(35),
 left: isMobile ? '49%' : '49%',
 top: isMobile ? '44%' : '41%',
 aspectRatio: 1 / 1,
-height: '15%',
+height: '10%',
 }
 });
 
